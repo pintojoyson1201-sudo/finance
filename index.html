@@ -10,430 +10,509 @@
 *{box-sizing:border-box}
 
 :root{
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --text:#101828;
-  --muted:#667085;
-  --border:#eaecf0;
-  --dark:#101828;
-  --soft:#f2f4f7;
-  --green:#12b76a;
+--bg:#f5f7fb;
+--card:#fff;
+--text:#101828;
+--muted:#667085;
+--dark:#0b1220;
+--soft:#f2f4f7;
+--border:#eaecf0;
+--green:#12b76a;
+--blue:#175cd3;
+--red:#f04438;
 }
+
+html{scroll-behavior:smooth}
 
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  padding-bottom:90px;
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+padding-bottom:88px;
 }
 
-button{
-  font:inherit;
+button,input{
+font:inherit;
 }
+
+button{cursor:pointer}
 
 .app{
-  max-width:760px;
-  margin:auto;
+max-width:760px;
+margin:auto;
 }
 
-/* TOP */
+/* HEADER */
 
-.top{
-  background:var(--dark);
-  color:white;
-  padding:30px 20px 26px;
-  border-radius:0 0 30px 30px;
+.header{
+background:var(--dark);
+color:white;
+padding:27px 20px 28px;
+border-radius:0 0 30px 30px;
 }
 
-.top-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.header-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-.logo{
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:.5px;
-  opacity:.8;
+.brand{
+font-size:13px;
+font-weight:800;
+letter-spacing:.8px;
+opacity:.75;
 }
 
 .avatar{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  background:#344054;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
+width:40px;
+height:40px;
+border-radius:50%;
+background:#344054;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:800;
 }
 
-.top h1{
-  font-size:30px;
-  margin:20px 0 6px;
+.header h1{
+font-size:29px;
+margin:22px 0 7px;
 }
 
-.top p{
-  margin:0;
-  color:#98a2b3;
+.header p{
+margin:0;
+color:#98a2b3;
+font-size:14px;
 }
 
 /* CONTENT */
 
 .content{
-  padding:20px;
+padding:20px;
 }
 
-.section-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:24px 0 12px;
+.section{
+margin-top:25px;
 }
 
-.section-title h2{
-  font-size:20px;
-  margin:0;
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px;
 }
 
-.section-title span{
-  color:var(--muted);
-  font-size:13px;
+.section-head h2{
+font-size:20px;
+margin:0;
+}
+
+.section-head span{
+font-size:13px;
+color:var(--muted);
 }
 
 /* CARDS */
 
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:20px;
-  margin-bottom:14px;
-  box-shadow:0 5px 20px rgba(16,24,40,.05);
+background:var(--card);
+border:1px solid var(--border);
+border-radius:21px;
+padding:19px;
+margin-bottom:14px;
+box-shadow:0 5px 20px rgba(16,24,40,.045);
 }
 
-.hero-card{
-  background:var(--dark);
-  color:white;
+.hero{
+background:var(--dark);
+color:white;
 }
 
-.hero-card p{
-  color:#98a2b3;
+.hero h2{
+margin:0 0 7px;
+font-size:21px;
 }
 
-.hero-title{
-  font-size:23px;
-  font-weight:750;
-  margin-bottom:7px;
+.hero p{
+color:#98a2b3;
+line-height:1.5;
+margin:0 0 18px;
 }
-
-.small{
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* PROGRESS */
 
 .progress-row{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+margin-bottom:8px;
 }
 
 .progress{
-  height:9px;
-  background:#eaecf0;
-  border-radius:20px;
-  overflow:hidden;
+height:9px;
+background:#eaecf0;
+border-radius:20px;
+overflow:hidden;
 }
 
 .progress-fill{
-  height:100%;
-  width:0%;
-  background:var(--green);
-  border-radius:20px;
-  transition:.3s;
+height:100%;
+width:0%;
+background:var(--green);
+border-radius:20px;
+transition:.3s;
+}
+
+/* CONTINUE */
+
+.continue{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.continue-icon{
+width:50px;
+height:50px;
+border-radius:15px;
+background:var(--soft);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+}
+
+.continue-info{
+flex:1;
+}
+
+.continue-info strong{
+display:block;
+margin-bottom:4px;
+}
+
+.continue-info span{
+font-size:13px;
+color:var(--muted);
 }
 
 /* COURSES */
 
 .course{
-  display:flex;
-  gap:15px;
-  align-items:center;
-  cursor:pointer;
+display:flex;
+gap:14px;
+align-items:center;
+cursor:pointer;
 }
 
 .course:active{
-  transform:scale(.985);
+transform:scale(.985);
 }
 
 .course-icon{
-  width:52px;
-  height:52px;
-  border-radius:16px;
-  background:var(--soft);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-  flex-shrink:0;
+width:53px;
+height:53px;
+border-radius:16px;
+background:var(--soft);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:27px;
+flex-shrink:0;
 }
 
 .course-info{
-  flex:1;
+flex:1;
 }
 
 .course-info h3{
-  margin:0 0 5px;
-  font-size:17px;
+margin:0 0 5px;
+font-size:16px;
 }
 
 .course-info p{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.4;
+margin:0;
+color:var(--muted);
+font-size:13px;
+line-height:1.4;
 }
 
 .arrow{
-  color:#98a2b3;
-  font-size:22px;
+font-size:23px;
+color:#98a2b3;
+}
+
+/* SEARCH */
+
+.search{
+width:100%;
+border:1px solid var(--border);
+background:white;
+border-radius:14px;
+padding:13px 15px;
+outline:none;
+font-size:15px;
+margin-bottom:14px;
 }
 
 /* TOOLS */
 
 .tool-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
 .tool{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:18px 12px;
-  text-align:center;
-  cursor:pointer;
+background:white;
+border:1px solid var(--border);
+border-radius:18px;
+padding:18px 12px;
+text-align:center;
+cursor:pointer;
 }
 
 .tool:active{
-  transform:scale(.97);
+transform:scale(.97);
 }
 
 .tool-icon{
-  font-size:28px;
-  margin-bottom:8px;
+font-size:27px;
+margin-bottom:8px;
 }
 
 .tool-title{
-  font-weight:650;
-  font-size:14px;
+font-size:14px;
+font-weight:700;
 }
 
 /* PAGES */
 
 .page{
-  display:none;
+display:none;
 }
 
 .page.active{
-  display:block;
+display:block;
 }
 
 /* LESSON */
 
 .back{
-  display:inline-block;
-  margin-bottom:16px;
-  color:var(--muted);
-  font-weight:650;
-  cursor:pointer;
+display:inline-block;
+color:var(--muted);
+font-weight:700;
+margin-bottom:15px;
 }
 
 .lesson-label{
-  font-size:13px;
-  font-weight:700;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.5px;
+font-size:12px;
+font-weight:800;
+color:var(--muted);
+text-transform:uppercase;
+letter-spacing:.6px;
 }
 
 .lesson-title{
-  font-size:27px;
-  line-height:1.2;
-  margin:10px 0 15px;
+font-size:27px;
+line-height:1.2;
+margin:10px 0 16px;
 }
 
 .lesson-text{
-  font-size:16px;
-  line-height:1.7;
-  color:#475467;
+font-size:16px;
+line-height:1.7;
+color:#475467;
 }
 
-.key-point{
-  background:var(--soft);
-  border-radius:16px;
-  padding:16px;
-  margin-top:20px;
+.key{
+background:var(--soft);
+padding:16px;
+border-radius:16px;
+margin-top:20px;
+line-height:1.5;
 }
 
-.key-point strong{
-  display:block;
-  margin-bottom:6px;
+.key strong{
+display:block;
+margin-bottom:6px;
 }
 
 .lesson-buttons{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
+display:flex;
+gap:10px;
+margin-top:20px;
 }
 
 .btn{
-  flex:1;
-  border:0;
-  border-radius:14px;
-  padding:14px;
-  font-weight:700;
-  cursor:pointer;
+border:0;
+border-radius:14px;
+padding:14px;
+font-weight:750;
+width:100%;
 }
 
 .primary{
-  background:var(--dark);
-  color:white;
+background:var(--dark);
+color:white;
 }
 
 .secondary{
-  background:var(--soft);
-  color:var(--text);
+background:var(--soft);
+color:var(--text);
 }
 
 /* QUIZ */
 
 .question{
-  font-size:20px;
-  font-weight:700;
-  line-height:1.4;
-  margin:15px 0;
+font-size:19px;
+font-weight:750;
+line-height:1.45;
+margin:18px 0;
 }
 
 .option{
-  width:100%;
-  text-align:left;
-  padding:15px;
-  margin:7px 0;
-  border-radius:14px;
-  border:2px solid var(--border);
-  background:white;
-  cursor:pointer;
+width:100%;
+text-align:left;
+background:white;
+border:2px solid var(--border);
+padding:14px;
+border-radius:13px;
+margin:6px 0;
 }
 
 .option.correct{
-  border-color:var(--green);
-  background:#ecfdf3;
+border-color:var(--green);
+background:#ecfdf3;
 }
 
 .option.wrong{
-  border-color:#f04438;
-  background:#fef3f2;
+border-color:var(--red);
+background:#fef3f2;
 }
 
-.result{
-  margin-top:15px;
-  font-weight:650;
+.quiz-result{
+margin-top:15px;
+font-weight:700;
+line-height:1.5;
 }
 
 /* CALCULATORS */
 
+label{
+font-size:13px;
+font-weight:650;
+display:block;
+margin-top:10px;
+}
+
 .input{
-  width:100%;
-  padding:14px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  margin:7px 0 15px;
-  font-size:16px;
+width:100%;
+padding:14px;
+border:1px solid var(--border);
+border-radius:12px;
+margin-top:6px;
+outline:none;
+background:white;
 }
 
-.result-box{
-  background:var(--soft);
-  border-radius:16px;
-  padding:18px;
-  margin-top:16px;
+.result{
+background:var(--soft);
+border-radius:16px;
+padding:17px;
+margin-top:15px;
 }
 
-.result-number{
-  font-size:27px;
-  font-weight:800;
+.result-label{
+font-size:12px;
+color:var(--muted);
 }
 
-/* BOTTOM NAV */
+.result-value{
+font-size:27px;
+font-weight:850;
+margin-top:3px;
+}
+
+/* PROGRESS */
+
+.stat-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.stat{
+background:white;
+border:1px solid var(--border);
+border-radius:18px;
+padding:18px;
+}
+
+.stat-number{
+font-size:26px;
+font-weight:850;
+}
+
+.stat-label{
+font-size:12px;
+color:var(--muted);
+margin-top:4px;
+}
+
+/* NAV */
 
 .nav{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  height:72px;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(15px);
-  border-top:1px solid var(--border);
-  display:flex;
-  justify-content:center;
-  z-index:50;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:74px;
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(15px);
+border-top:1px solid var(--border);
+z-index:100;
 }
 
 .nav-inner{
-  width:100%;
-  max-width:760px;
-  display:flex;
-  justify-content:space-around;
+height:100%;
+max-width:760px;
+margin:auto;
+display:flex;
 }
 
 .nav button{
-  border:0;
-  background:none;
-  color:#98a2b3;
-  font-size:11px;
-  font-weight:650;
-  width:25%;
+width:25%;
+border:0;
+background:none;
+color:#98a2b3;
+font-size:11px;
+font-weight:700;
 }
 
 .nav button.active{
-  color:var(--dark);
+color:var(--dark);
 }
 
 .nav-icon{
-  display:block;
-  font-size:22px;
-  margin-bottom:2px;
+display:block;
+font-size:22px;
+margin-bottom:2px;
 }
 
-.empty{
-  text-align:center;
-  padding:30px 10px;
-  color:var(--muted);
+/* HIDDEN */
+
+.hidden{
+display:none!important;
 }
+
+/* FOOTER */
 
 .footer{
-  text-align:center;
-  padding:30px;
-  color:#98a2b3;
-  font-size:12px;
-}
-
-@media(min-width:600px){
-  .courses-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
-
-  .courses-grid .card{
-    margin-bottom:0;
-  }
+text-align:center;
+padding:30px;
+font-size:12px;
+color:#98a2b3;
 }
 </style>
 </head>
@@ -446,141 +525,162 @@ button{
 
 <section id="homePage" class="page active">
 
-<header class="top">
-  <div class="top-row">
-    <div class="logo">FINANCE ACADEMY</div>
-    <div class="avatar">J</div>
-  </div>
+<header class="header">
+<div class="header-top">
+<div class="brand">FINANCE ACADEMY</div>
+<div class="avatar">J</div>
+</div>
 
-  <h1>Good evening 👋</h1>
-  <p>Keep building your financial knowledge.</p>
+<h1>Master Finance.</h1>
+<p>Learn markets, investing, valuation and risk — step by step.</p>
 </header>
 
 <main class="content">
 
-  <div class="card hero-card">
+<div class="card hero">
 
-    <div class="hero-title">Your Learning Journey</div>
+<h2>Your Learning Journey</h2>
 
-    <p>Complete courses and build a strong understanding of finance.</p>
+<p>
+Build your knowledge from the fundamentals to advanced financial concepts.
+</p>
 
-    <div class="progress-row">
-      <span>Overall progress</span>
-      <strong id="overallPercent">0%</strong>
-    </div>
+<div class="progress-row">
+<span>Overall progress</span>
+<strong id="overallPercent">0%</strong>
+</div>
 
-    <div class="progress">
-      <div id="overallProgress" class="progress-fill"></div>
-    </div>
+<div class="progress">
+<div id="overallProgress" class="progress-fill"></div>
+</div>
 
-  </div>
+</div>
 
-  <div class="section-title">
-    <h2>Continue Learning</h2>
-  </div>
+<div class="section">
 
-  <div class="card course" onclick="startCourse(0)">
+<div class="section-head">
+<h2>Continue Learning</h2>
+</div>
 
-    <div class="course-icon">📊</div>
+<div class="card course" onclick="resumeCourse()">
 
-    <div class="course-info">
-      <h3>Financial Markets</h3>
-      <p>Start with the foundations of how financial markets work.</p>
-    </div>
+<div class="continue-icon">📊</div>
 
-    <div class="arrow">›</div>
+<div class="continue-info">
+<strong id="continueTitle">Financial Markets</strong>
+<span id="continueLesson">Start Lesson 1</span>
+</div>
 
-  </div>
+<div class="arrow">›</div>
 
-  <div class="section-title">
-    <h2>Explore Courses</h2>
-    <span>7 courses</span>
-  </div>
+</div>
 
-  <div class="courses-grid">
+</div>
 
-    <div class="card course" onclick="startCourse(0)">
-      <div class="course-icon">📊</div>
-      <div class="course-info">
-        <h3>Financial Markets</h3>
-        <p>Markets, exchanges, liquidity and price discovery.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<div class="section">
 
-    <div class="card course" onclick="comingSoon('Stocks & Investing')">
-      <div class="course-icon">📈</div>
-      <div class="course-info">
-        <h3>Stocks & Investing</h3>
-        <p>Equity, valuation and investment principles.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<div class="section-head">
+<h2>Explore Courses</h2>
+<span>7 courses</span>
+</div>
 
-    <div class="card course" onclick="comingSoon('Bonds & Interest Rates')">
-      <div class="course-icon">💰</div>
-      <div class="course-info">
-        <h3>Bonds & Rates</h3>
-        <p>Yields, duration and interest-rate markets.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<input
+class="search"
+id="courseSearch"
+placeholder="Search courses..."
+oninput="filterCourses()"
+>
 
-    <div class="card course" onclick="comingSoon('Valuation')">
-      <div class="course-icon">🧮</div>
-      <div class="course-info">
-        <h3>Valuation</h3>
-        <p>DCF, multiples and intrinsic value.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<div id="courseList">
 
-    <div class="card course" onclick="comingSoon('Derivatives & Options')">
-      <div class="course-icon">⚡</div>
-      <div class="course-info">
-        <h3>Derivatives</h3>
-        <p>Futures, options, Greeks and strategies.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<div class="card course" data-name="financial markets" onclick="startCourse(0)">
+<div class="course-icon">📊</div>
+<div class="course-info">
+<h3>Financial Markets</h3>
+<p>Markets, exchanges, liquidity and price discovery.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <div class="card course" onclick="comingSoon('Crypto')">
-      <div class="course-icon">₿</div>
-      <div class="course-info">
-        <h3>Crypto</h3>
-        <p>Bitcoin, Ethereum and crypto markets.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<div class="card course" data-name="stocks investing" onclick="startCourse(1)">
+<div class="course-icon">📈</div>
+<div class="course-info">
+<h3>Stocks & Investing</h3>
+<p>Equity, financial statements and investment principles.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <div class="card course" onclick="comingSoon('Macroeconomics')">
-      <div class="course-icon">🌎</div>
-      <div class="course-info">
-        <h3>Macroeconomics</h3>
-        <p>Inflation, GDP, central banks and cycles.</p>
-      </div>
-      <div class="arrow">›</div>
-    </div>
+<div class="card course" data-name="bonds interest rates" onclick="startCourse(2)">
+<div class="course-icon">💰</div>
+<div class="course-info">
+<h3>Bonds & Interest Rates</h3>
+<p>Yields, bond prices, duration and the yield curve.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  </div>
+<div class="card course" data-name="valuation" onclick="startCourse(3)">
+<div class="course-icon">🧮</div>
+<div class="course-info">
+<h3>Valuation</h3>
+<p>DCF, multiples and intrinsic value.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="section-title">
-    <h2>Finance Tools</h2>
-  </div>
+<div class="card course" data-name="derivatives options" onclick="startCourse(4)">
+<div class="course-icon">⚡</div>
+<div class="course-info">
+<h3>Derivatives & Options</h3>
+<p>Futures, options, Greeks and strategies.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="tool-grid">
+<div class="card course" data-name="crypto" onclick="startCourse(5)">
+<div class="course-icon">₿</div>
+<div class="course-info">
+<h3>Crypto</h3>
+<p>Bitcoin, Ethereum and digital-asset markets.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <div class="tool" onclick="showPage('toolsPage')">
-      <div class="tool-icon">🧮</div>
-      <div class="tool-title">Calculators</div>
-    </div>
+<div class="card course" data-name="macroeconomics macro economics" onclick="startCourse(6)">
+<div class="course-icon">🌎</div>
+<div class="course-info">
+<h3>Macroeconomics</h3>
+<p>Inflation, GDP, central banks and economic cycles.</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <div class="tool" onclick="showPage('progressPage')">
-      <div class="tool-icon">🏆</div>
-      <div class="tool-title">My Progress</div>
-    </div>
+</div>
 
-  </div>
+</div>
+
+<div class="section">
+
+<div class="section-head">
+<h2>Quick Tools</h2>
+</div>
+
+<div class="tool-grid">
+
+<div class="tool" onclick="showPage('toolsPage')">
+<div class="tool-icon">🧮</div>
+<div class="tool-title">Calculators</div>
+</div>
+
+<div class="tool" onclick="showPage('progressPage')">
+<div class="tool-icon">🏆</div>
+<div class="tool-title">My Progress</div>
+</div>
+
+</div>
+
+</div>
 
 </main>
 
@@ -591,76 +691,76 @@ button{
 
 <section id="learnPage" class="page">
 
-<header class="top">
-  <div class="logo">LEARN</div>
-  <h1>Courses</h1>
-  <p>Build your finance knowledge step by step.</p>
+<header class="header">
+<div class="brand">LEARN</div>
+<h1>Finance Courses</h1>
+<p>Choose a subject and start learning.</p>
 </header>
 
 <main class="content">
 
-  <div class="card course" onclick="startCourse(0)">
-    <div class="course-icon">📊</div>
-    <div class="course-info">
-      <h3>Financial Markets</h3>
-      <p>10 lessons · Beginner</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(0)">
+<div class="course-icon">📊</div>
+<div class="course-info">
+<h3>Financial Markets</h3>
+<p>10 lessons · Beginner</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="card course" onclick="comingSoon('Stocks & Investing')">
-    <div class="course-icon">📈</div>
-    <div class="course-info">
-      <h3>Stocks & Investing</h3>
-      <p>Coming next</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(1)">
+<div class="course-icon">📈</div>
+<div class="course-info">
+<h3>Stocks & Investing</h3>
+<p>10 lessons · Beginner</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="card course" onclick="comingSoon('Bonds & Interest Rates')">
-    <div class="course-icon">💰</div>
-    <div class="course-info">
-      <h3>Bonds & Interest Rates</h3>
-      <p>Coming next</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(2)">
+<div class="course-icon">💰</div>
+<div class="course-info">
+<h3>Bonds & Interest Rates</h3>
+<p>10 lessons · Intermediate</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="card course" onclick="comingSoon('Valuation')">
-    <div class="course-icon">🧮</div>
-    <div class="course-info">
-      <h3>Valuation</h3>
-      <p>Coming next</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(3)">
+<div class="course-icon">🧮</div>
+<div class="course-info">
+<h3>Valuation</h3>
+<p>10 lessons · Intermediate</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="card course" onclick="comingSoon('Derivatives & Options')">
-    <div class="course-icon">⚡</div>
-    <div class="course-info">
-      <h3>Derivatives & Options</h3>
-      <p>Coming next</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(4)">
+<div class="course-icon">⚡</div>
+<div class="course-info">
+<h3>Derivatives & Options</h3>
+<p>10 lessons · Advanced</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="card course" onclick="comingSoon('Crypto')">
-    <div class="course-icon">₿</div>
-    <div class="course-info">
-      <h3>Crypto</h3>
-      <p>Coming next</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(5)">
+<div class="course-icon">₿</div>
+<div class="course-info">
+<h3>Crypto</h3>
+<p>10 lessons · Intermediate</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-  <div class="card course" onclick="comingSoon('Macroeconomics')">
-    <div class="course-icon">🌎</div>
-    <div class="course-info">
-      <h3>Macroeconomics</h3>
-      <p>Coming next</p>
-    </div>
-    <div class="arrow">›</div>
-  </div>
+<div class="card course" onclick="startCourse(6)">
+<div class="course-icon">🌎</div>
+<div class="course-info">
+<h3>Macroeconomics</h3>
+<p>10 lessons · Intermediate</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
 </main>
 
@@ -671,61 +771,81 @@ button{
 
 <section id="toolsPage" class="page">
 
-<header class="top">
-  <div class="logo">FINANCE TOOLS</div>
-  <h1>Calculators</h1>
-  <p>Useful tools for investors and traders.</p>
+<header class="header">
+<div class="brand">FINANCE TOOLS</div>
+<h1>Calculators</h1>
+<p>Useful tools for investors and students.</p>
 </header>
 
 <main class="content">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Compound Interest</h2>
+<h2>Compound Interest</h2>
 
-    <label>Initial Investment</label>
-    <input id="principal" class="input" type="number" placeholder="₹ 100000">
+<label>Initial Investment</label>
+<input id="principal" class="input" type="number" placeholder="100000">
 
-    <label>Annual Return (%)</label>
-    <input id="rate" class="input" type="number" placeholder="12">
+<label>Annual Return (%)</label>
+<input id="rate" class="input" type="number" placeholder="12">
 
-    <label>Years</label>
-    <input id="years" class="input" type="number" placeholder="10">
+<label>Years</label>
+<input id="years" class="input" type="number" placeholder="10">
 
-    <button class="btn primary" onclick="calculateCompound()">
-      Calculate
-    </button>
+<button class="btn primary" onclick="compound()">Calculate</button>
 
-    <div id="compoundResult" class="result-box hidden">
-      <div class="small">Future Value</div>
-      <div id="futureValue" class="result-number">₹0</div>
-    </div>
+<div id="compoundResult" class="result hidden">
+<div class="result-label">Future Value</div>
+<div id="futureValue" class="result-value">₹0</div>
+</div>
 
-  </div>
+</div>
 
-  <div class="card">
 
-    <h2>CAGR</h2>
+<div class="card">
 
-    <label>Starting Value</label>
-    <input id="cagrStart" class="input" type="number" placeholder="₹ 100000">
+<h2>CAGR Calculator</h2>
 
-    <label>Ending Value</label>
-    <input id="cagrEnd" class="input" type="number" placeholder="₹ 200000">
+<label>Starting Value</label>
+<input id="cagrStart" class="input" type="number" placeholder="100000">
 
-    <label>Years</label>
-    <input id="cagrYears" class="input" type="number" placeholder="5">
+<label>Ending Value</label>
+<input id="cagrEnd" class="input" type="number" placeholder="200000">
 
-    <button class="btn primary" onclick="calculateCAGR()">
-      Calculate CAGR
-    </button>
+<label>Years</label>
+<input id="cagrYears" class="input" type="number" placeholder="5">
 
-    <div id="cagrResult" class="result-box hidden">
-      <div class="small">CAGR</div>
-      <div id="cagrValue" class="result-number">0%</div>
-    </div>
+<button class="btn primary" onclick="cagr()">Calculate</button>
 
-  </div>
+<div id="cagrResult" class="result hidden">
+<div class="result-label">CAGR</div>
+<div id="cagrValue" class="result-value">0%</div>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Simple SIP Calculator</h2>
+
+<label>Monthly Investment</label>
+<input id="sipAmount" class="input" type="number" placeholder="10000">
+
+<label>Expected Annual Return (%)</label>
+<input id="sipRate" class="input" type="number" placeholder="12">
+
+<label>Years</label>
+<input id="sipYears" class="input" type="number" placeholder="10">
+
+<button class="btn primary" onclick="sip()">Calculate</button>
+
+<div id="sipResult" class="result hidden">
+<div class="result-label">Estimated Future Value</div>
+<div id="sipValue" class="result-value">₹0</div>
+</div>
+
+</div>
 
 </main>
 
@@ -736,84 +856,105 @@ button{
 
 <section id="progressPage" class="page">
 
-<header class="top">
-  <div class="logo">MY PROGRESS</div>
-  <h1>Your Progress</h1>
-  <p>Track your journey through Finance Academy.</p>
+<header class="header">
+<div class="brand">YOUR PROGRESS</div>
+<h1>Keep Going.</h1>
+<p>Track your Finance Academy journey.</p>
 </header>
 
 <main class="content">
 
-  <div class="card">
+<div class="stat-grid">
 
-    <h2>Financial Markets</h2>
+<div class="stat">
+<div id="statLessons" class="stat-number">0</div>
+<div class="stat-label">Lessons completed</div>
+</div>
 
-    <div class="progress-row">
-      <span>Course progress</span>
-      <strong id="courseProgressText">0%</strong>
-    </div>
+<div class="stat">
+<div id="statCourses" class="stat-number">0</div>
+<div class="stat-label">Courses completed</div>
+</div>
 
-    <div class="progress">
-      <div id="courseProgressBar" class="progress-fill"></div>
-    </div>
+<div class="stat">
+<div id="statPercent" class="stat-number">0%</div>
+<div class="stat-label">Overall progress</div>
+</div>
 
-  </div>
+<div class="stat">
+<div id="statQuizzes" class="stat-number">0</div>
+<div class="stat-label">Quizzes completed</div>
+</div>
 
-  <div class="card">
-    <h3>Lessons completed</h3>
-    <div id="lessonsCompleted" class="result-number">0 / 10</div>
-  </div>
+</div>
 
-  <div class="card">
-    <h3>Courses completed</h3>
-    <div id="coursesCompleted" class="result-number">0</div>
-  </div>
+<div class="section">
+
+<div class="card">
+
+<h2>Course Progress</h2>
+
+<p class="small">
+Financial Markets
+</p>
+
+<div class="progress">
+<div id="marketProgress" class="progress-fill"></div>
+</div>
+
+<p id="marketProgressText" class="small">
+0% completed
+</p>
+
+</div>
+
+</div>
 
 </main>
 
 </section>
 
 
-<!-- LESSON PAGE -->
+<!-- LESSON -->
 
 <section id="lessonPage" class="page">
 
 <main class="content">
 
-  <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back</div>
 
-  <div class="card">
+<div class="card">
 
-    <div id="lessonLabel" class="lesson-label">
-      Lesson 1 of 10
-    </div>
+<div id="lessonCourse" class="lesson-label"></div>
 
-    <h1 id="lessonTitle" class="lesson-title"></h1>
+<div id="lessonLabel" class="lesson-label"></div>
 
-    <p id="lessonText" class="lesson-text"></p>
+<h1 id="lessonTitle" class="lesson-title"></h1>
 
-    <div class="key-point">
-      <strong>💡 Key Point</strong>
-      <span id="keyPoint"></span>
-    </div>
+<p id="lessonText" class="lesson-text"></p>
 
-    <div class="progress">
-      <div id="lessonProgress" class="progress-fill"></div>
-    </div>
+<div class="key">
+<strong>💡 Key Point</strong>
+<span id="lessonKey"></span>
+</div>
 
-    <div class="lesson-buttons">
+<div class="progress">
+<div id="lessonProgress" class="progress-fill"></div>
+</div>
 
-      <button class="btn secondary" onclick="previousLesson()">
-        Previous
-      </button>
+<div class="lesson-buttons">
 
-      <button id="nextLessonButton" class="btn primary" onclick="nextLesson()">
-        Next
-      </button>
+<button class="btn secondary" onclick="previousLesson()">
+Previous
+</button>
 
-    </div>
+<button id="nextButton" class="btn primary" onclick="nextLesson()">
+Next
+</button>
 
-  </div>
+</div>
+
+</div>
 
 </main>
 
@@ -826,78 +967,62 @@ button{
 
 <main class="content">
 
-  <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back</div>
 
-  <div class="card">
+<div class="card">
 
-    <div class="lesson-label">Final Quiz</div>
+<div class="lesson-label">FINAL QUIZ</div>
 
-    <h1>Financial Markets Quiz</h1>
+<h1 id="quizTitle">Course Quiz</h1>
 
-    <div id="questionArea">
+<div id="quizBox">
 
-      <div class="question">
-        Which market is where newly issued securities are sold to investors?
-      </div>
+<div id="quizQuestion" class="question"></div>
 
-      <button class="option" onclick="quizAnswer(this,false)">
-        Secondary market
-      </button>
+<div id="quizOptions"></div>
 
-      <button class="option" onclick="quizAnswer(this,true)">
-        Primary market
-      </button>
+<div id="quizResult" class="quiz-result"></div>
 
-      <button class="option" onclick="quizAnswer(this,false)">
-        Foreign exchange market
-      </button>
+<button id="quizNext"
+class="btn primary hidden"
+onclick="nextQuizQuestion()">
+Next Question
+</button>
 
-      <button class="option" onclick="quizAnswer(this,false)">
-        Commodity market
-      </button>
+</div>
 
-      <div id="quizResult" class="result"></div>
-
-    </div>
-
-    <button id="finishQuiz" class="btn primary hidden" onclick="finishCourse()">
-      Complete Course
-    </button>
-
-  </div>
+</div>
 
 </main>
 
 </section>
 
 
-<!-- BOTTOM NAV -->
-
 <nav class="nav">
 
-  <div class="nav-inner">
+<div class="nav-inner">
 
-    <button id="navHome" class="active" onclick="showPage('homePage')">
-      <span class="nav-icon">⌂</span>
-      Home
-    </button>
+<button id="navHome" class="active" onclick="showPage('homePage')">
+<span class="nav-icon">⌂</span>
+Home
+</button>
 
-    <button id="navLearn" onclick="showPage('learnPage')">
-      <span class="nav-icon">📚</span>
-      Learn
-    </button>
+<button id="navLearn" onclick="showPage('learnPage')">
+<span class="nav-icon">📚</span>
+Learn
+</button>
 
-    <button id="navTools" onclick="showPage('toolsPage')">
-      <span class="nav-icon">🧮</span>
-      Tools
-    </button>
+<button id="navTools" onclick="showPage('toolsPage')">
+<span class="nav-icon">🧮</span>
+Tools
+</button>
 
-    <button id="navProgress" onclick="showPage('progressPage')">
-      <span class="nav-icon">🏆</span>
-      Progress
-    </button>
+<button id="navProgress" onclick="showPage('progressPage')">
+<span class="nav-icon">🏆</span>
+Progress
+</button>
 
-  </div>
+</div>
 
 </nav>
 
@@ -906,305 +1031,668 @@ button{
 
 <script>
 
-const lessons = [
+/* COURSE DATA */
+
+const courses = [
 
 {
-title:"What is a Financial Market?",
-text:"A financial market is a system where buyers and sellers trade financial assets. These assets include shares, bonds, currencies, commodities and derivatives. Financial markets connect people and institutions that have capital with those that need capital.",
-key:"Financial markets help transfer capital and provide a place where financial assets can be bought and sold."
+name:"Financial Markets",
+icon:"📊",
+lessons:[
+["What is a Financial Market?",
+"A financial market is a system where buyers and sellers trade financial assets such as shares, bonds, currencies, commodities and derivatives.",
+"Financial markets connect capital providers with people and institutions that need capital."],
+["Why Financial Markets Exist",
+"Markets help businesses raise capital, provide liquidity, facilitate investment and allow prices to be discovered through supply and demand.",
+"Markets are important because they make the transfer of capital more efficient."],
+["Equity Markets",
+"Equity markets allow investors to buy and sell ownership interests in companies. A share represents a fractional ownership interest.",
+"Buying equity generally means becoming a shareholder."],
+["Bond Markets",
+"Bond markets involve debt securities. Governments and companies can borrow money by issuing bonds to investors.",
+"A bond represents a lending relationship rather than ownership."],
+["Money Markets",
+"Money markets focus on short-term borrowing and lending, usually involving instruments with maturities of one year or less.",
+"Money markets are closely connected to liquidity and short-term interest rates."],
+["Foreign Exchange Markets",
+"The foreign exchange market is where currencies are bought and sold. Exchange rates determine the relative value of currencies.",
+"FX markets are essential for international trade and investment."],
+["Commodity Markets",
+"Commodity markets involve assets such as crude oil, natural gas, gold and agricultural products.",
+"Commodities can be traded physically or through financial contracts."],
+["Derivatives Markets",
+"Derivatives are contracts whose value depends on an underlying asset or variable. Futures and options are common examples.",
+"Derivatives can be used for hedging, speculation and risk management."],
+["Risk and Return",
+"Investments involve uncertainty. Different assets have different levels of risk and potential return.",
+"Understanding risk is just as important as understanding potential return."],
+["Putting It All Together",
+"Stocks, bonds, currencies, commodities and derivatives are interconnected. Interest rates and economic conditions can influence many markets simultaneously.",
+"Financial markets should be studied as an interconnected system."]
+],
+quiz:[
+["Which market is where newly issued securities are sold?","Primary market",["Primary market","Secondary market","Money market","FX market"]],
+["What does a share generally represent?","Ownership",["Debt","Ownership","Currency","Commodity"]]
+]
 },
 
 {
-title:"Why Do Financial Markets Exist?",
-text:"Financial markets perform several important functions. They help businesses raise capital, allow investors to invest savings, provide liquidity and help establish prices through supply and demand.",
-key:"Markets make it easier to move capital, manage risk and discover prices."
+name:"Stocks & Investing",
+icon:"📈",
+lessons:[
+["What is a Stock?","A stock represents an ownership interest in a company. Shareholders may benefit from capital appreciation and dividends.","Stocks represent ownership."],
+["Why Companies Issue Shares","Companies can issue shares to raise capital for expansion, acquisitions, debt reduction or other corporate purposes.","Equity financing provides capital without creating conventional debt."],
+["Market Capitalisation","Market capitalisation is calculated by multiplying the share price by the number of shares outstanding.","Market cap measures the market value of equity."],
+["Revenue and Profit","Revenue is the income generated from business operations. Profit is what remains after expenses.","Revenue and profit are different concepts."],
+["EPS","Earnings per share measures a company's earnings attributable to each outstanding share.","EPS is widely used in equity valuation."],
+["P/E Ratio","The price-to-earnings ratio compares a company's share price with its earnings per share.","P/E links market price to earnings."],
+["Dividends","Dividends are distributions of company profits or reserves to shareholders.","Dividend policy differs across companies."],
+["Growth Investing","Growth investors focus on businesses expected to increase revenue, earnings or cash flows rapidly.","Growth can justify higher valuations, but expectations matter."],
+["Value Investing","Value investing focuses on purchasing assets believed to be worth more than their current market price.","Intrinsic value is central to value investing."],
+["Diversification","Diversification spreads investments across different assets or businesses to reduce concentration risk.","Diversification can reduce company-specific risk."]
+],
+quiz:[
+["What does EPS stand for?","Earnings per share",["Earnings per share","Equity price spread","Estimated profit stock","Economic price system"]],
+["What does P/E compare?","Price with earnings",["Price with earnings","Debt with revenue","Dividend with cash","Assets with liabilities"]]
+]
 },
 
 {
-title:"Equity Markets",
-text:"Equity markets are markets for ownership in companies. When an investor purchases a share, the investor obtains an ownership interest in that company.",
-key:"A share represents a claim on a portion of a company's ownership."
+name:"Bonds & Interest Rates",
+icon:"💰",
+lessons:[
+["What is a Bond?","A bond is a debt instrument through which an issuer borrows money from investors.","Bond investors are lenders."],
+["Coupon","A coupon is the interest payment specified by the bond's terms.","Coupon payments compensate investors for lending."],
+["Yield","Yield measures the return associated with a bond under a particular pricing framework.","Bond yield and bond price are closely related."],
+["Price and Yield","Generally, when market yields rise, existing fixed-rate bond prices fall. When yields fall, prices rise.","Bond prices and yields generally move inversely."],
+["Maturity","Maturity is the date when the principal amount of a bond is scheduled to be repaid.","Longer maturities can create greater interest-rate sensitivity."],
+["Duration","Duration measures a bond portfolio's sensitivity to changes in interest rates.","Higher duration generally means greater price sensitivity."],
+["Yield Curve","The yield curve plots yields across different maturities of debt securities.","The yield curve contains information about market expectations and conditions."],
+["Credit Risk","Credit risk is the possibility that a borrower may fail to meet its obligations.","Higher credit risk can require higher yields."],
+["Government Bonds","Governments issue bonds to finance spending and manage public finances.","Government bonds are major components of global fixed-income markets."],
+["Interest Rates and Bonds","Central-bank policy and market expectations can influence interest rates and therefore bond prices.","Rates are one of the most important drivers of bond markets."]
+],
+quiz:[
+["When yields rise, fixed-rate bond prices generally?","Fall",["Rise","Fall","Stay exactly equal","Become zero"]],
+["Duration measures sensitivity mainly to?","Interest rates",["Oil prices","Interest rates","GDP only","Exchange rates only"]]
+]
 },
 
 {
-title:"Bond Markets",
-text:"Bond markets involve debt securities. Governments and companies can borrow money by issuing bonds. Investors generally receive interest and repayment of principal according to the bond's terms.",
-key:"Bonds represent lending rather than ownership."
+name:"Valuation",
+icon:"🧮",
+lessons:[
+["Why Value a Business?","Valuation estimates what an asset or business may be worth based on financial and economic assumptions.","Value is an estimate, not a guaranteed price."],
+["Intrinsic Value","Intrinsic value is an estimate of an asset's underlying economic worth.","Intrinsic value depends on assumptions."],
+["DCF","Discounted cash flow valuation estimates present value by discounting expected future cash flows.","DCF is based on future cash flows and a discount rate."],
+["Free Cash Flow","Free cash flow represents cash available after required operating and investment expenditures.","Cash flow is central to DCF valuation."],
+["Discount Rate","The discount rate reflects the required return associated with the risk of future cash flows.","Higher discount rates reduce present value."],
+["Terminal Value","Terminal value represents the value of cash flows beyond the explicit forecast period.","Terminal value can represent a large portion of DCF value."],
+["P/E Valuation","P/E valuation compares a company's price with its earnings.","Comparable companies can provide useful valuation benchmarks."],
+["EV/EBITDA","Enterprise value to EBITDA is a commonly used valuation multiple.","EV/EBITDA helps compare operating businesses."],
+["Margin of Safety","A margin of safety means buying an asset at a price sufficiently below estimated value to allow for uncertainty.","Valuation is uncertain, so a margin of safety can matter."],
+["Valuation and Expectations","Market prices reflect expectations about future growth, profitability and risk.","Changes in expectations can change valuations dramatically."]
+],
+quiz:[
+["DCF primarily discounts what?","Future cash flows",["Past revenue","Future cash flows","Share count","Historical prices"]],
+["A higher discount rate generally makes present value?","Lower",["Higher","Lower","Unchanged","Infinite"]]
+]
 },
 
 {
-title:"Money Markets",
-text:"Money markets deal primarily with short-term borrowing and lending. Instruments typically have maturities of one year or less and are used extensively for liquidity management.",
-key:"Money markets focus on short-term funding and liquidity."
+name:"Derivatives & Options",
+icon:"⚡",
+lessons:[
+["What is a Derivative?","A derivative is a contract whose value is linked to an underlying asset, rate or variable.","Derivatives derive their value from something else."],
+["Futures","Futures contracts create an obligation to transact at agreed terms on a future date or through settlement.","Futures are commonly used for hedging and speculation."],
+["Options","Options give the buyer a right, but generally not an obligation, subject to the contract terms.","Option buyers pay a premium."],
+["Call Option","A call option gives the buyer the right to buy the underlying at the strike price, subject to the contract terms.","Calls are generally associated with upside exposure."],
+["Put Option","A put option gives the buyer the right to sell the underlying at the strike price, subject to the contract terms.","Puts are generally associated with downside protection."],
+["Strike Price","The strike price is the price specified in an option contract for exercise.","Strike is one of the key option variables."],
+["Premium","The premium is the price paid by an option buyer to acquire the option.","Premium is the option buyer's upfront cost."],
+["Implied Volatility","Implied volatility is a market-derived measure of expected variability embedded in option prices.","Higher implied volatility generally increases option premiums, all else equal."],
+["Greeks","Greeks such as delta, gamma, theta and vega describe different sensitivities of option prices.","Greeks help traders understand option risk."],
+["Risk Management","Derivatives can create substantial leverage and risk. Position sizing and risk controls are essential.","Understanding payoff and risk is more important than simply knowing a strategy."]
+],
+quiz:[
+["A call option gives the buyer the right to?","Buy",["Buy","Sell","Borrow","Lend"]],
+["Theta is commonly associated with?","Time decay",["Time decay","Interest rate only","Volume","Revenue"]]
+]
 },
 
 {
-title:"Foreign Exchange Markets",
-text:"The foreign exchange market is where currencies are traded. Exchange rates tell us how much of one currency is required to buy another currency.",
-key:"FX markets are essential for international trade, investment and currency risk management."
+name:"Crypto",
+icon:"₿",
+lessons:[
+["What is Bitcoin?","Bitcoin is a digital asset operating on a decentralised network using blockchain technology.","Bitcoin uses a distributed ledger."],
+["Blockchain","A blockchain is a distributed ledger where transactions are recorded in linked blocks.","Blockchains allow participants to verify transaction history."],
+["Bitcoin Supply","Bitcoin's protocol specifies a maximum supply of 21 million coins.","Scarcity is an important part of Bitcoin's monetary design."],
+["Ethereum","Ethereum is a blockchain platform supporting smart contracts and applications.","Ethereum extends beyond a simple payment asset."],
+["Stablecoins","Stablecoins are crypto assets designed to maintain relatively stable value, often relative to a reference currency.","Stablecoins are widely used within crypto markets."],
+["Crypto Exchanges","Exchanges provide venues where users can trade crypto assets and derivatives.","Exchange structure and liquidity matter."],
+["Funding Rates","Perpetual futures often use funding mechanisms to help keep contract prices aligned with the underlying asset.","Funding can affect leveraged positions."],
+["Leverage","Leverage allows traders to control larger positions with less capital but increases both potential gains and losses.","Leverage magnifies risk."],
+["Crypto Volatility","Crypto markets can experience substantial price movements over short periods.","Volatility creates both opportunity and risk."],
+["Risk Management","Crypto trading requires careful position sizing, liquidation awareness and risk management.","Survival is more important than chasing every move."]
+],
+quiz:[
+["What is Bitcoin's maximum protocol-defined supply?","21 million",["10 million","21 million","100 million","Unlimited"]],
+["Leverage generally does what to risk?","Magnifies it",["Removes it","Magnifies it","Guarantees profit","Eliminates volatility"]]
+]
 },
 
 {
-title:"Commodity Markets",
-text:"Commodity markets allow participants to trade commodities such as crude oil, natural gas, gold, silver and agricultural products, either physically or through financial contracts.",
-key:"Commodities can be traded directly or through derivatives."
-},
-
-{
-title:"Derivatives Markets",
-text:"Derivatives are contracts whose value is linked to an underlying asset or variable. Futures and options are common examples. They can be used for hedging, speculation and risk management.",
-key:"A derivative gets its value from something else."
-},
-
-{
-title:"Risk and Return",
-text:"Investing involves uncertainty. Different investments have different levels of risk and potential return. Understanding risk, diversification and time horizon is essential for sound investment decisions.",
-key:"Higher potential return generally comes with greater uncertainty."
-},
-
-{
-title:"Putting It All Together",
-text:"Financial markets are interconnected. Interest rates can influence bonds, stocks, currencies and economic activity. Economic growth can affect company profits and commodities. Understanding these relationships helps investors interpret market movements.",
-key:"Markets should not be studied in isolation because economic and financial variables interact."
+name:"Macroeconomics",
+icon:"🌎",
+lessons:[
+["What is Macroeconomics?","Macroeconomics studies the economy as a whole, including growth, inflation, unemployment and monetary policy.","Macro focuses on economy-wide variables."],
+["GDP","Gross domestic product measures the value of final goods and services produced within an economy over a period.","GDP is a major measure of economic activity."],
+["Inflation","Inflation is a sustained increase in the general price level of goods and services.","Inflation reduces purchasing power when incomes do not keep pace."],
+["Interest Rates","Interest rates influence borrowing, saving, investment and asset valuations.","Rates are a major macroeconomic transmission mechanism."],
+["Central Banks","Central banks influence monetary conditions through tools such as policy interest rates and liquidity operations.","Central-bank policy affects financial conditions."],
+["Unemployment","The unemployment rate measures the share of the labour force that is unemployed and seeking work.","Labour markets are important indicators of economic health."],
+["Fiscal Policy","Fiscal policy concerns government spending and taxation.","Fiscal policy can influence aggregate demand."],
+["Monetary Policy","Monetary policy concerns the management of money and financial conditions by a central bank.","Monetary policy is closely linked to inflation and economic activity."],
+["Economic Cycles","Economies move through periods of expansion and contraction.","Cycles affect corporate profits and asset prices."],
+["Macro and Markets","Economic growth, inflation, interest rates and policy expectations can influence stocks, bonds, currencies and commodities.","Understanding macro helps explain cross-asset market movements."]
+],
+quiz:[
+["GDP measures mainly?","Economic output",["Economic output","Only inflation","Only unemployment","Only interest rates"]],
+["Who conducts monetary policy in most countries?","Central bank",["Stock exchange","Central bank","Broker","Company board"]]
+]
 }
 
 ];
 
-let currentLesson = 0;
+let currentCourse=0;
+let currentLesson=0;
+let quizIndex=0;
+let quizScore=0;
+let quizAnswered=false;
 
-function showPage(pageId){
 
-  document.querySelectorAll(".page").forEach(function(page){
-    page.classList.remove("active");
-  });
+/* NAVIGATION */
 
-  document.getElementById(pageId).classList.add("active");
+function showPage(id){
 
-  document.querySelectorAll(".nav button").forEach(function(btn){
-    btn.classList.remove("active");
-  });
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+});
 
-  if(pageId==="homePage") navHome.classList.add("active");
-  if(pageId==="learnPage") navLearn.classList.add("active");
-  if(pageId==="toolsPage") navTools.classList.add("active");
-  if(pageId==="progressPage") navProgress.classList.add("active");
+document.getElementById(id).classList.add("active");
 
-  updateProgress();
+document.querySelectorAll(".nav button").forEach(b=>{
+b.classList.remove("active");
+});
 
-  window.scrollTo(0,0);
+if(id==="homePage")navHome.classList.add("active");
+if(id==="learnPage")navLearn.classList.add("active");
+if(id==="toolsPage")navTools.classList.add("active");
+if(id==="progressPage")navProgress.classList.add("active");
+
+updateProgress();
+
+window.scrollTo(0,0);
 }
 
-function goHome(){
-  showPage("homePage");
-}
+
+/* COURSES */
 
 function startCourse(index){
 
-  if(index!==0){
-    comingSoon("This course");
-    return;
-  }
+currentCourse=index;
 
-  currentLesson = Number(localStorage.getItem("currentLesson") || 0);
+const saved=
+Number(localStorage.getItem("course_"+index+"_lesson")||0);
 
-  showLesson();
+currentLesson=saved;
 
-  showPage("lessonPage");
+showLesson();
+
+showPage("lessonPage");
+
+}
+
+function resumeCourse(){
+
+let savedCourse=
+Number(localStorage.getItem("lastCourse")||0);
+
+startCourse(savedCourse);
+
 }
 
 function showLesson(){
 
-  const lesson = lessons[currentLesson];
+const course=courses[currentCourse];
+const lesson=course.lessons[currentLesson];
 
-  lessonLabel.textContent =
-    "Lesson " + (currentLesson+1) + " of " + lessons.length;
+lessonCourse.textContent=course.icon+" "+course.name;
 
-  lessonTitle.textContent = lesson.title;
+lessonLabel.textContent=
+"Lesson "+(currentLesson+1)+" of "+course.lessons.length;
 
-  lessonText.textContent = lesson.text;
+lessonTitle.textContent=lesson[0];
 
-  keyPoint.textContent = lesson.key;
+lessonText.textContent=lesson[1];
 
-  const progress =
-    (currentLesson / lessons.length) * 100;
+lessonKey.textContent=lesson[2];
 
-  lessonProgress.style.width = progress + "%";
+const percent=
+(currentLesson/course.lessons.length)*100;
 
-  if(currentLesson === lessons.length-1){
-    nextLessonButton.textContent = "Take Final Quiz";
-  }else{
-    nextLessonButton.textContent = "Next Lesson";
-  }
+lessonProgress.style.width=percent+"%";
 
-  localStorage.setItem("currentLesson",currentLesson);
+nextButton.textContent=
+currentLesson===course.lessons.length-1
+?"Take Final Quiz"
+:"Next Lesson";
+
+localStorage.setItem(
+"lastCourse",
+currentCourse
+);
+
+localStorage.setItem(
+"course_"+currentCourse+"_lesson",
+currentLesson
+);
+
+updateProgress();
+
 }
 
 function nextLesson(){
 
-  if(currentLesson < lessons.length-1){
+const course=courses[currentCourse];
 
-    currentLesson++;
+if(currentLesson<course.lessons.length-1){
 
-    localStorage.setItem("currentLesson",currentLesson);
+currentLesson++;
 
-    showLesson();
+showLesson();
 
-  }else{
+}else{
 
-    showPage("quizPage");
+startQuiz();
 
-  }
+}
 
 }
 
 function previousLesson(){
 
-  if(currentLesson>0){
+if(currentLesson>0){
 
-    currentLesson--;
+currentLesson--;
 
-    localStorage.setItem("currentLesson",currentLesson);
-
-    showLesson();
-
-  }
+showLesson();
 
 }
 
-function quizAnswer(button,correct){
+}
 
-  const options =
-    document.querySelectorAll(".option");
 
-  options.forEach(function(option){
-    option.disabled=true;
-  });
+/* QUIZ */
 
-  if(correct){
+function startQuiz(){
 
-    button.classList.add("correct");
+const course=courses[currentCourse];
 
-    quizResult.textContent =
-      "Correct! 🎉 The primary market is where new securities are issued.";
+quizIndex=0;
+quizScore=0;
+quizAnswered=false;
 
-    finishQuiz.classList.remove("hidden");
+quizTitle.textContent=
+course.name+" Quiz";
 
-  }else{
+showQuizQuestion();
 
-    button.classList.add("wrong");
-
-    quizResult.textContent =
-      "Not quite. The correct answer is the Primary Market.";
-
-    finishQuiz.classList.remove("hidden");
-
-  }
+showPage("quizPage");
 
 }
 
-function finishCourse(){
+function showQuizQuestion(){
 
-  localStorage.setItem("financialMarketsCompleted","true");
+const course=courses[currentCourse];
+const q=course.quiz[quizIndex];
 
-  localStorage.setItem("currentLesson","10");
+quizAnswered=false;
 
-  updateProgress();
+quizQuestion.textContent=q[0];
 
-  alert("Financial Markets completed! 🎉");
+quizResult.textContent="";
 
-  showPage("progressPage");
+quizNext.classList.add("hidden");
 
-}
+quizOptions.innerHTML="";
 
-function calculateCompound(){
+q[2].forEach(option=>{
 
-  const P =
-    Number(document.getElementById("principal").value);
+const button=document.createElement("button");
 
-  const r =
-    Number(document.getElementById("rate").value)/100;
+button.className="option";
+button.textContent=option;
 
-  const n =
-    Number(document.getElementById("years").value);
+button.onclick=()=>{
+answerQuiz(button,option===q[1]);
+};
 
-  if(!P || !r || !n){
-    alert("Please enter all values.");
-    return;
-  }
+quizOptions.appendChild(button);
 
-  const future =
-    P * Math.pow(1+r,n);
-
-  document.getElementById("futureValue").textContent =
-    "₹" + Math.round(future).toLocaleString("en-IN");
-
-  document.getElementById("compoundResult")
-    .classList.remove("hidden");
+});
 
 }
 
-function calculateCAGR(){
+function answerQuiz(button,correct){
 
-  const start =
-    Number(document.getElementById("cagrStart").value);
+if(quizAnswered)return;
 
-  const end =
-    Number(document.getElementById("cagrEnd").value);
+quizAnswered=true;
 
-  const years =
-    Number(document.getElementById("cagrYears").value);
+document.querySelectorAll(".option").forEach(b=>{
+b.disabled=true;
+});
 
-  if(!start || !end || !years){
-    alert("Please enter all values.");
-    return;
-  }
+if(correct){
 
-  const cagr =
-    (Math.pow(end/start,1/years)-1)*100;
+button.classList.add("correct");
 
-  document.getElementById("cagrValue").textContent =
-    cagr.toFixed(2) + "%";
+quizScore++;
 
-  document.getElementById("cagrResult")
-    .classList.remove("hidden");
+quizResult.textContent=
+"Correct! 🎉";
+
+}else{
+
+button.classList.add("wrong");
+
+quizResult.textContent=
+"Not quite. Correct answer: "+
+courses[currentCourse].quiz[quizIndex][1];
 
 }
+
+quizNext.classList.remove("hidden");
+
+}
+
+function nextQuizQuestion(){
+
+const course=courses[currentCourse];
+
+quizIndex++;
+
+if(quizIndex<course.quiz.length){
+
+showQuizQuestion();
+
+}else{
+
+completeCourse();
+
+}
+
+}
+
+function completeCourse(){
+
+localStorage.setItem(
+"course_"+currentCourse+"_completed",
+"true"
+);
+
+localStorage.setItem(
+"quiz_"+currentCourse+"_completed",
+"true"
+);
+
+localStorage.setItem(
+"course_"+currentCourse+"_lesson",
+courses[currentCourse].lessons.length
+);
+
+alert(
+"Course completed! 🎉\n\nScore: "+
+quizScore+"/"+courses[currentCourse].quiz.length
+);
+
+showPage("progressPage");
+
+}
+
+
+/* PROGRESS */
 
 function updateProgress(){
 
-  const completed =
-    localStorage.getItem("financialMarketsCompleted")==="true";
+let totalLessons=0;
+let completedLessons=0;
+let completedCourses=0;
+let completedQuizzes=0;
 
-  const lesson =
-    Number(localStorage.getItem("currentLesson") || 0);
+courses.forEach((course,index)=>{
 
-  let percent = 0;
+totalLessons+=course.lessons.length;
 
-  if(completed){
-    percent=100;
-  }else{
-    percent=Math.round((lesson/lessons.length)*100);
-  }
+let lesson=
+Number(localStorage.getItem("course_"+index+"_lesson")||0);
 
-  overallPercent.textContent=percent+"%";
-  overallProgress.style.width=percent+"%";
+completedLessons+=Math.min(
+lesson,
+course.lessons.length
+);
 
-  courseProgressText.textContent=percent+"%";
-  courseProgressBar.style.width=percent+"%";
+if(
+localStorage.getItem(
+"course_"+index+"_completed"
+)==="true"
+){
 
-  lessonsCompleted.textContent =
-    Math.min(lesson,10) + " / 10";
+completedCourses++;
 
-  coursesCompleted.textContent =
-    completed ? "1" : "0";
+}
+
+if(
+localStorage.getItem(
+"quiz_"+index+"_completed"
+)==="true"
+){
+
+completedQuizzes++;
 
 }
 
-function comingSoon(name){
+});
 
-  alert(name + " is coming next. 🚀");
+const percent=
+Math.round((completedLessons/totalLessons)*100);
+
+overallPercent.textContent=percent+"%";
+overallProgress.style.width=percent+"%";
+
+statLessons.textContent=completedLessons;
+statCourses.textContent=completedCourses;
+statPercent.textContent=percent+"%";
+statQuizzes.textContent=completedQuizzes;
+
+let marketLessons=
+Number(localStorage.getItem("course_0_lesson")||0);
+
+let marketPercent=
+Math.round(
+(Math.min(marketLessons,10)/10)*100
+);
+
+marketProgress.style.width=
+marketPercent+"%";
+
+marketProgressText.textContent=
+marketPercent+"% completed";
+
+continueTitle.textContent=
+courses[
+Number(localStorage.getItem("lastCourse")||0)
+].name;
+
+let last=
+Number(localStorage.getItem("lastCourse")||0);
+
+let lastLesson=
+Number(
+localStorage.getItem("course_"+last+"_lesson")||0
+);
+
+if(lastLesson>=courses[last].lessons.length){
+
+continueLesson.textContent=
+"Course completed ✓";
+
+}else{
+
+continueLesson.textContent=
+"Continue Lesson "+(lastLesson+1);
 
 }
+
+}
+
+
+/* SEARCH */
+
+function filterCourses(){
+
+const search=
+courseSearch.value.toLowerCase();
+
+document.querySelectorAll("#courseList .course")
+.forEach(card=>{
+
+const name=
+card.dataset.name;
+
+card.style.display=
+name.includes(search)
+?"flex"
+:"none";
+
+});
+
+}
+
+
+/* CALCULATORS */
+
+function compound(){
+
+const P=
+Number(principal.value);
+
+const r=
+Number(rate.value)/100;
+
+const n=
+Number(years.value);
+
+if(!P||!r||!n){
+
+alert("Please enter all values.");
+
+return;
+
+}
+
+const result=
+P*Math.pow(1+r,n);
+
+futureValue.textContent=
+"₹"+Math.round(result).toLocaleString("en-IN");
+
+compoundResult.classList.remove("hidden");
+
+}
+
+function cagr(){
+
+const start=
+Number(cagrStart.value);
+
+const end=
+Number(cagrEnd.value);
+
+const yearsValue=
+Number(cagrYears.value);
+
+if(!start||!end||!yearsValue){
+
+alert("Please enter all values.");
+
+return;
+
+}
+
+const result=
+(Math.pow(end/start,1/yearsValue)-1)*100;
+
+cagrValue.textContent=
+result.toFixed(2)+"%";
+
+cagrResult.classList.remove("hidden");
+
+}
+
+function sip(){
+
+const monthly=
+Number(sipAmount.value);
+
+const annualRate=
+Number(sipRate.value)/100;
+
+const yearsValue=
+Number(sipYears.value);
+
+if(!monthly||!annualRate||!yearsValue){
+
+alert("Please enter all values.");
+
+return;
+
+}
+
+const months=
+yearsValue*12;
+
+const monthlyRate=
+annualRate/12;
+
+const result=
+monthly*
+(
+(Math.pow(1+monthlyRate,months)-1)
+/
+monthlyRate
+)*
+(1+monthlyRate);
+
+sipValue.textContent=
+"₹"+Math.round(result).toLocaleString("en-IN");
+
+sipResult.classList.remove("hidden");
+
+}
+
+
+/* HOME */
+
+function goHome(){
+
+showPage("homePage");
+
+}
+
+
+/* COMING SOON */
 
 updateProgress();
 
