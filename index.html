@@ -7,21 +7,19 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Finance Academy">
-<meta name="description" content="Learn finance, investing, valuation, markets and risk.">
 <title>Finance Academy</title>
-
 <style>
 *{box-sizing:border-box}
 :root{
 --bg:#f5f7fb;--card:#fff;--text:#101828;--muted:#667085;
 --dark:#0b1220;--soft:#f2f4f7;--border:#eaecf0;
---green:#12b76a;--blue:#175cd3;--red:#f04438;--yellow:#f79009
+--green:#12b76a;--blue:#175cd3;--red:#f04438;--gold:#f79009;
 }
 html{scroll-behavior:smooth}
 body{
 margin:0;background:var(--bg);color:var(--text);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-padding-bottom:90px;-webkit-tap-highlight-color:transparent
+padding-bottom:92px;-webkit-tap-highlight-color:transparent
 }
 button,input{font:inherit}
 button{cursor:pointer}
@@ -34,22 +32,21 @@ border-radius:0 0 30px 30px
 .header-top{display:flex;align-items:center;justify-content:space-between}
 .brand{font-size:12px;font-weight:800;letter-spacing:1px;opacity:.7}
 .avatar{
-width:40px;height:40px;border-radius:50%;background:#344054;
+width:42px;height:42px;border-radius:50%;background:#344054;
 display:flex;align-items:center;justify-content:center;font-weight:800
 }
-.header h1{font-size:29px;margin:22px 0 7px}
+.header h1{font-size:30px;margin:22px 0 7px;line-height:1.15}
 .header p{margin:0;color:#98a2b3;font-size:14px;line-height:1.5}
 .content{padding:20px}
 .section{margin-top:25px}
 .section-head{
-display:flex;justify-content:space-between;align-items:center;
-margin-bottom:12px
+display:flex;justify-content:space-between;align-items:center;margin-bottom:12px
 }
 .section-head h2{font-size:20px;margin:0}
 .section-head span{font-size:13px;color:var(--muted)}
 .card{
-background:var(--card);border:1px solid var(--border);
-border-radius:21px;padding:19px;margin-bottom:14px;
+background:var(--card);border:1px solid var(--border);border-radius:21px;
+padding:19px;margin-bottom:14px;
 box-shadow:0 5px 20px rgba(16,24,40,.045)
 }
 .hero{background:var(--dark);color:#fff}
@@ -58,30 +55,30 @@ box-shadow:0 5px 20px rgba(16,24,40,.045)
 .progress-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px}
 .progress{height:9px;background:#eaecf0;border-radius:20px;overflow:hidden}
 .progress-fill{
-height:100%;width:0;background:var(--green);
-border-radius:20px;transition:.35s
+height:100%;width:0;background:var(--green);border-radius:20px;transition:.35s
 }
-.course{display:flex;gap:14px;align-items:center;cursor:pointer}
-.course:active,.tool:active,.btn:active{transform:scale(.985)}
-.course-icon,.continue-icon{
-width:53px;height:53px;border-radius:16px;background:var(--soft);
-display:flex;align-items:center;justify-content:center;
-font-size:27px;flex-shrink:0
-}
-.course-info{flex:1}
-.course-info h3{margin:0 0 5px;font-size:16px}
-.course-info p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
-.arrow{font-size:23px;color:#98a2b3}
 .continue{display:flex;align-items:center;gap:14px}
+.continue-icon,.course-icon{
+background:var(--soft);display:flex;align-items:center;justify-content:center;
+flex-shrink:0
+}
+.continue-icon{width:52px;height:52px;border-radius:15px;font-size:25px}
 .continue-info{flex:1}
 .continue-info strong{display:block;margin-bottom:4px}
 .continue-info span{font-size:13px;color:var(--muted)}
+.course{display:flex;gap:14px;align-items:center;cursor:pointer}
+.course:active,.tool:active,.btn:active{transform:scale(.985)}
+.course-icon{width:54px;height:54px;border-radius:16px;font-size:27px}
+.course-info{flex:1}
+.course-info h3{margin:0 0 5px;font-size:16px}
+.course-info p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+.arrow{font-size:24px;color:#98a2b3}
+.course-meta{font-size:11px;color:var(--muted);margin-top:7px}
 .search{
-width:100%;border:1px solid var(--border);background:#fff;
-border-radius:14px;padding:13px 15px;outline:none;font-size:15px;
-margin-bottom:14px
+width:100%;border:1px solid var(--border);background:#fff;border-radius:14px;
+padding:13px 15px;outline:none;font-size:15px;margin-bottom:14px
 }
-.search:focus,.input:focus{border-color:#98a2b3;box-shadow:0 0 0 3px #f2f4f7}
+.search:focus,.input:focus{border-color:#98a2b3}
 .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .tool{
 background:#fff;border:1px solid var(--border);border-radius:18px;
@@ -89,12 +86,21 @@ padding:18px 12px;text-align:center;cursor:pointer
 }
 .tool-icon{font-size:27px;margin-bottom:8px}
 .tool-title{font-size:14px;font-weight:700}
-.back{display:inline-block;color:var(--muted);font-weight:700;margin-bottom:15px;cursor:pointer}
+.badge{
+display:inline-block;padding:5px 9px;border-radius:20px;
+font-size:11px;font-weight:750;background:var(--soft);color:var(--muted)
+}
+.badge.done{background:#ecfdf3;color:#087443}
+.small{font-size:13px;color:var(--muted)}
+.back{
+display:inline-block;color:var(--muted);font-weight:700;
+margin-bottom:15px;cursor:pointer
+}
 .lesson-label{
 font-size:12px;font-weight:800;color:var(--muted);
 text-transform:uppercase;letter-spacing:.6px
 }
-.lesson-title{font-size:27px;line-height:1.2;margin:10px 0 16px}
+.lesson-title{font-size:28px;line-height:1.2;margin:10px 0 16px}
 .lesson-text{font-size:16px;line-height:1.7;color:#475467}
 .key{
 background:var(--soft);padding:16px;border-radius:16px;margin-top:20px;line-height:1.5
@@ -107,38 +113,39 @@ transition:.15s
 }
 .primary{background:var(--dark);color:#fff}
 .secondary{background:var(--soft);color:var(--text)}
+.disabled{opacity:.45;pointer-events:none}
+.question{font-size:19px;font-weight:750;line-height:1.45;margin:18px 0}
 .option{
 width:100%;text-align:left;background:#fff;border:2px solid var(--border);
 padding:14px;border-radius:13px;margin:6px 0;transition:.15s
 }
+.option:hover{border-color:#98a2b3}
 .option.correct{border-color:var(--green);background:#ecfdf3}
 .option.wrong{border-color:var(--red);background:#fef3f2}
-.option:disabled{cursor:default}
-.question{font-size:19px;font-weight:750;line-height:1.45;margin:18px 0}
 .quiz-result{margin-top:15px;font-weight:700;line-height:1.5}
+.quiz-score{
+text-align:center;padding:15px;background:var(--soft);
+border-radius:16px;margin:15px 0
+}
+.quiz-score strong{font-size:34px;display:block}
 label{font-size:13px;font-weight:650;display:block;margin-top:10px}
 .input{
-width:100%;padding:14px;border:1px solid var(--border);
-border-radius:12px;margin-top:6px;outline:none;background:#fff
+width:100%;padding:14px;border:1px solid var(--border);border-radius:12px;
+margin-top:6px;outline:none;background:#fff
 }
 .result{background:var(--soft);border-radius:16px;padding:17px;margin-top:15px}
 .result-label{font-size:12px;color:var(--muted)}
 .result-value{font-size:27px;font-weight:850;margin-top:3px}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stat{
-background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px
-}
+.stat{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
 .stat-number{font-size:26px;font-weight:850}
 .stat-label{font-size:12px;color:var(--muted);margin-top:4px}
-.small{font-size:13px;color:var(--muted)}
-.badge{
-display:inline-block;padding:5px 9px;border-radius:999px;
-font-size:11px;font-weight:800;background:var(--soft);color:var(--muted)
+.course-progress-card{margin-bottom:12px}
+.course-progress-top{
+display:flex;justify-content:space-between;align-items:center;margin-bottom:8px
 }
-.empty{
-text-align:center;color:var(--muted);padding:25px;background:#fff;
-border:1px dashed var(--border);border-radius:18px
-}
+.course-progress-top strong{font-size:14px}
+.course-progress-top span{font-size:12px;color:var(--muted)}
 .nav{
 position:fixed;bottom:0;left:0;right:0;height:76px;
 background:rgba(255,255,255,.97);backdrop-filter:blur(15px);
@@ -146,34 +153,27 @@ border-top:1px solid var(--border);z-index:100
 }
 .nav-inner{height:100%;max-width:760px;margin:auto;display:flex}
 .nav button{
-width:25%;border:0;background:none;color:#98a2b3;
-font-size:11px;font-weight:700
+width:25%;border:0;background:none;color:#98a2b3;font-size:11px;font-weight:700
 }
 .nav button.active{color:var(--dark)}
 .nav-icon{display:block;font-size:22px;margin-bottom:2px}
 .hidden{display:none!important}
 .footer{text-align:center;padding:30px;font-size:12px;color:#98a2b3}
-.toast{
-position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);
-background:var(--dark);color:#fff;padding:12px 17px;border-radius:13px;
-font-size:13px;font-weight:700;opacity:0;pointer-events:none;
-transition:.25s;z-index:200;white-space:nowrap
+.notice{
+padding:14px;border-radius:14px;background:#fffaeb;
+color:#93370d;font-size:13px;line-height:1.5;margin-bottom:14px
 }
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.complete-box{text-align:center;padding:10px}
-.complete-icon{font-size:55px;margin-bottom:8px}
+.danger{color:var(--red)}
 @media(max-width:420px){
 .content{padding:16px}
-.header{padding-left:17px;padding-right:17px}
-.header h1{font-size:26px}
+.header{padding-left:18px;padding-right:18px}
+.header h1{font-size:27px}
 .lesson-title{font-size:25px}
 }
 </style>
 </head>
-
 <body>
 <div class="app">
-
 <!-- HOME -->
 <section id="homePage" class="page active">
 <header class="header">
@@ -184,22 +184,19 @@ transition:.25s;z-index:200;white-space:nowrap
 <h1>Master Finance.</h1>
 <p>Learn markets, investing, valuation and risk — step by step.</p>
 </header>
-
 <main class="content">
 <div class="card hero">
 <h2>Your Learning Journey</h2>
 <p>Build your knowledge from fundamentals to advanced financial concepts.</p>
 <div class="progress-row">
-<span>Overall progress</span>
-<strong id="overallPercent">0%</strong>
+<span>Overall progress</span><strong id="overallPercent">0%</strong>
 </div>
 <div class="progress"><div id="overallProgress" class="progress-fill"></div></div>
 </div>
-
 <div class="section">
 <div class="section-head"><h2>Continue Learning</h2></div>
 <div class="card course" onclick="resumeCourse()">
-<div class="continue-icon">📚</div>
+<div class="continue-icon" id="continueIcon">📊</div>
 <div class="continue-info">
 <strong id="continueTitle">Financial Markets</strong>
 <span id="continueLesson">Start Lesson 1</span>
@@ -207,16 +204,11 @@ transition:.25s;z-index:200;white-space:nowrap
 <div class="arrow">›</div>
 </div>
 </div>
-
 <div class="section">
-<div class="section-head">
-<h2>Explore Courses</h2>
-<span id="courseCount">7 courses</span>
-</div>
-<input id="courseSearch" class="search" placeholder="Search courses..." oninput="filterCourses()">
+<div class="section-head"><h2>Explore Courses</h2><span>7 courses</span></div>
+<input class="search" id="courseSearch" placeholder="Search courses..." oninput="filterCourses()">
 <div id="courseList"></div>
 </div>
-
 <div class="section">
 <div class="section-head"><h2>Quick Tools</h2></div>
 <div class="tool-grid">
@@ -230,7 +222,6 @@ transition:.25s;z-index:200;white-space:nowrap
 </div>
 </main>
 </section>
-
 <!-- LEARN -->
 <section id="learnPage" class="page">
 <header class="header">
@@ -238,11 +229,8 @@ transition:.25s;z-index:200;white-space:nowrap
 <h1>Finance Courses</h1>
 <p>Choose a subject and start learning.</p>
 </header>
-<main class="content">
-<div id="learnList"></div>
-</main>
+<main class="content" id="learnList"></main>
 </section>
-
 <!-- TOOLS -->
 <section id="toolsPage" class="page">
 <header class="header">
@@ -250,9 +238,7 @@ transition:.25s;z-index:200;white-space:nowrap
 <h1>Calculators</h1>
 <p>Useful tools for investors and students.</p>
 </header>
-
 <main class="content">
-
 <div class="card">
 <h2>Compound Interest</h2>
 <label>Initial Investment</label>
@@ -261,13 +247,12 @@ transition:.25s;z-index:200;white-space:nowrap
 <input id="rate" class="input" type="number" placeholder="12">
 <label>Years</label>
 <input id="years" class="input" type="number" placeholder="10">
-<button class="btn primary" style="margin-top:15px" onclick="compound()">Calculate</button>
+<button class="btn primary" style="margin-top:14px" onclick="compound()">Calculate</button>
 <div id="compoundResult" class="result hidden">
 <div class="result-label">Future Value</div>
 <div id="futureValue" class="result-value">₹0</div>
 </div>
 </div>
-
 <div class="card">
 <h2>CAGR Calculator</h2>
 <label>Starting Value</label>
@@ -276,13 +261,12 @@ transition:.25s;z-index:200;white-space:nowrap
 <input id="cagrEnd" class="input" type="number" placeholder="200000">
 <label>Years</label>
 <input id="cagrYears" class="input" type="number" placeholder="5">
-<button class="btn primary" style="margin-top:15px" onclick="cagr()">Calculate</button>
+<button class="btn primary" style="margin-top:14px" onclick="cagr()">Calculate</button>
 <div id="cagrResult" class="result hidden">
 <div class="result-label">CAGR</div>
 <div id="cagrValue" class="result-value">0%</div>
 </div>
 </div>
-
 <div class="card">
 <h2>SIP Calculator</h2>
 <label>Monthly Investment</label>
@@ -291,16 +275,26 @@ transition:.25s;z-index:200;white-space:nowrap
 <input id="sipRate" class="input" type="number" placeholder="12">
 <label>Years</label>
 <input id="sipYears" class="input" type="number" placeholder="10">
-<button class="btn primary" style="margin-top:15px" onclick="sip()">Calculate</button>
+<button class="btn primary" style="margin-top:14px" onclick="sip()">Calculate</button>
 <div id="sipResult" class="result hidden">
 <div class="result-label">Estimated Future Value</div>
 <div id="sipValue" class="result-value">₹0</div>
 </div>
 </div>
-
+<div class="card">
+<h2>Simple Return Calculator</h2>
+<label>Investment</label>
+<input id="returnStart" class="input" type="number" placeholder="100000">
+<label>Current Value</label>
+<input id="returnEnd" class="input" type="number" placeholder="125000">
+<button class="btn primary" style="margin-top:14px" onclick="simpleReturn()">Calculate</button>
+<div id="returnResult" class="result hidden">
+<div class="result-label">Total Return</div>
+<div id="returnValue" class="result-value">0%</div>
+</div>
+</div>
 </main>
 </section>
-
 <!-- PROGRESS -->
 <section id="progressPage" class="page">
 <header class="header">
@@ -308,7 +302,6 @@ transition:.25s;z-index:200;white-space:nowrap
 <h1>Keep Going.</h1>
 <p>Track your Finance Academy journey.</p>
 </header>
-
 <main class="content">
 <div class="stat-grid">
 <div class="stat"><div id="statLessons" class="stat-number">0</div><div class="stat-label">Lessons completed</div></div>
@@ -316,22 +309,22 @@ transition:.25s;z-index:200;white-space:nowrap
 <div class="stat"><div id="statPercent" class="stat-number">0%</div><div class="stat-label">Overall progress</div></div>
 <div class="stat"><div id="statQuizzes" class="stat-number">0</div><div class="stat-label">Quizzes completed</div></div>
 </div>
-
 <div class="section">
-<div class="card">
-<h2>Course Progress</h2>
+<div class="section-head"><h2>Course Progress</h2></div>
 <div id="progressCourses"></div>
 </div>
-</div>
-
+<div class="section">
 <div class="card">
-<h2>Reset Progress</h2>
-<p class="small">This will erase all saved lessons, quiz results and course completion data on this device.</p>
-<button class="btn secondary" onclick="resetProgress()">Reset My Progress</button>
+<h3>About your progress</h3>
+<p class="small">
+Your progress is stored on this device using browser storage.
+It will remain when you return to the app on the same device and browser.
+</p>
+<button class="btn secondary" onclick="resetProgress()">Reset All Progress</button>
+</div>
 </div>
 </main>
 </section>
-
 <!-- LESSON -->
 <section id="lessonPage" class="page">
 <main class="content">
@@ -341,12 +334,10 @@ transition:.25s;z-index:200;white-space:nowrap
 <div id="lessonLabel" class="lesson-label"></div>
 <h1 id="lessonTitle" class="lesson-title"></h1>
 <p id="lessonText" class="lesson-text"></p>
-
 <div class="key">
 <strong>💡 Key Point</strong>
 <span id="lessonKey"></span>
 </div>
-
 <div style="margin-top:20px">
 <div class="progress-row">
 <span>Course progress</span>
@@ -354,15 +345,13 @@ transition:.25s;z-index:200;white-space:nowrap
 </div>
 <div class="progress"><div id="lessonProgress" class="progress-fill"></div></div>
 </div>
-
 <div class="lesson-buttons">
-<button class="btn secondary" onclick="previousLesson()">Previous</button>
+<button id="previousButton" class="btn secondary" onclick="previousLesson()">Previous</button>
 <button id="nextButton" class="btn primary" onclick="nextLesson()">Next Lesson</button>
 </div>
 </div>
 </main>
 </section>
-
 <!-- QUIZ -->
 <section id="quizPage" class="page">
 <main class="content">
@@ -374,28 +363,36 @@ transition:.25s;z-index:200;white-space:nowrap
 <div id="quizQuestion" class="question"></div>
 <div id="quizOptions"></div>
 <div id="quizResult" class="quiz-result"></div>
-<button id="quizNext" class="btn primary hidden" style="margin-top:15px" onclick="nextQuizQuestion()">Next Question</button>
+<button id="quizNext" class="btn primary hidden" style="margin-top:14px" onclick="nextQuizQuestion()">Next Question</button>
 </div>
 </div>
 </main>
 </section>
-
 <nav class="nav">
 <div class="nav-inner">
-<button id="navHome" class="active" onclick="showPage('homePage')"><span class="nav-icon">⌂</span>Home</button>
-<button id="navLearn" onclick="showPage('learnPage')"><span class="nav-icon">📚</span>Learn</button>
-<button id="navTools" onclick="showPage('toolsPage')"><span class="nav-icon">🧮</span>Tools</button>
-<button id="navProgress" onclick="showPage('progressPage')"><span class="nav-icon">🏆</span>Progress</button>
+<button id="navHome" class="active" onclick="showPage('homePage')">
+<span class="nav-icon">⌂</span>Home
+</button>
+<button id="navLearn" onclick="showPage('learnPage')">
+<span class="nav-icon">📚</span>Learn
+</button>
+<button id="navTools" onclick="showPage('toolsPage')">
+<span class="nav-icon">🧮</span>Tools
+</button>
+<button id="navProgress" onclick="showPage('progressPage')">
+<span class="nav-icon">🏆</span>Progress
+</button>
 </div>
 </nav>
 </div>
-
-<div id="toast" class="toast"></div>
-
 <script>
+/* =========================
+   FINANCE ACADEMY DATA
+========================= */
 const courses=[
 {
 name:"Financial Markets",icon:"📊",level:"Beginner",
+description:"Markets, exchanges, liquidity and price discovery.",
 lessons:[
 ["What is a Financial Market?","A financial market is a system where buyers and sellers trade financial assets such as shares, bonds, currencies, commodities and derivatives.","Financial markets connect capital providers with people and institutions that need capital."],
 ["Why Financial Markets Exist","Markets help businesses raise capital, provide liquidity, facilitate investment and allow prices to be discovered through supply and demand.","Markets make the transfer of capital more efficient."],
@@ -410,11 +407,14 @@ lessons:[
 ],
 quiz:[
 ["Which market is where newly issued securities are sold?","Primary market",["Primary market","Secondary market","Money market","FX market"]],
-["What does a share generally represent?","Ownership",["Debt","Ownership","Currency","Commodity"]]
+["What does a share generally represent?","Ownership",["Debt","Ownership","Currency","Commodity"]],
+["Which market focuses on short-term borrowing?","Money market",["Equity market","Money market","Commodity market","Real estate market"]],
+["What does FX stand for?","Foreign exchange",["Fixed exposure","Foreign exchange","Future equity","Financial execution"]]
 ]
 },
 {
 name:"Stocks & Investing",icon:"📈",level:"Beginner",
+description:"Equity, financial statements and investment principles.",
 lessons:[
 ["What is a Stock?","A stock represents an ownership interest in a company. Shareholders may benefit from capital appreciation and dividends.","Stocks represent ownership."],
 ["Why Companies Issue Shares","Companies can issue shares to raise capital for expansion, acquisitions, debt reduction or other corporate purposes.","Equity financing provides capital without creating conventional debt."],
@@ -429,11 +429,14 @@ lessons:[
 ],
 quiz:[
 ["What does EPS stand for?","Earnings per share",["Earnings per share","Equity price spread","Estimated profit stock","Economic price system"]],
-["What does P/E compare?","Price with earnings",["Price with earnings","Debt with revenue","Dividend with cash","Assets with liabilities"]]
+["What does P/E compare?","Price with earnings",["Price with earnings","Debt with revenue","Dividend with cash","Assets with liabilities"]],
+["Market capitalisation is calculated using share price multiplied by?","Shares outstanding",["Revenue","Shares outstanding","Debt","Dividends"]],
+["Diversification mainly helps reduce?","Concentration risk",["All risk","Concentration risk","Inflation","Taxes"]]
 ]
 },
 {
 name:"Bonds & Interest Rates",icon:"💰",level:"Intermediate",
+description:"Yields, bond prices, duration and the yield curve.",
 lessons:[
 ["What is a Bond?","A bond is a debt instrument through which an issuer borrows money from investors.","Bond investors are lenders."],
 ["Coupon","A coupon is the interest payment specified by the bond's terms.","Coupon payments compensate investors for lending."],
@@ -448,11 +451,14 @@ lessons:[
 ],
 quiz:[
 ["When yields rise, fixed-rate bond prices generally?","Fall",["Rise","Fall","Stay exactly equal","Become zero"]],
-["Duration measures sensitivity mainly to?","Interest rates",["Oil prices","Interest rates","GDP only","Exchange rates only"]]
+["Duration measures sensitivity mainly to?","Interest rates",["Oil prices","Interest rates","GDP only","Exchange rates only"]],
+["A bond is primarily a form of?","Debt",["Equity","Debt","Commodity","Currency"]],
+["Longer duration generally means?","Greater interest-rate sensitivity",["No risk","Greater interest-rate sensitivity","Higher dividends","Lower maturity"]]
 ]
 },
 {
 name:"Valuation",icon:"🧮",level:"Intermediate",
+description:"DCF, multiples and intrinsic value.",
 lessons:[
 ["Why Value a Business?","Valuation estimates what an asset or business may be worth based on financial and economic assumptions.","Value is an estimate, not a guaranteed price."],
 ["Intrinsic Value","Intrinsic value is an estimate of an asset's underlying economic worth.","Intrinsic value depends on assumptions."],
@@ -467,11 +473,14 @@ lessons:[
 ],
 quiz:[
 ["DCF primarily discounts what?","Future cash flows",["Past revenue","Future cash flows","Share count","Historical prices"]],
-["A higher discount rate generally makes present value?","Lower",["Higher","Lower","Unchanged","Infinite"]]
+["A higher discount rate generally makes present value?","Lower",["Higher","Lower","Unchanged","Infinite"]],
+["P/E compares price with?","Earnings",["Cash","Earnings","Debt","Inventory"]],
+["A margin of safety helps account for?","Uncertainty",["Guaranteed returns","Uncertainty","Taxes only","Dividends only"]]
 ]
 },
 {
 name:"Derivatives & Options",icon:"⚡",level:"Advanced",
+description:"Futures, options, Greeks and strategies.",
 lessons:[
 ["What is a Derivative?","A derivative is a contract whose value is linked to an underlying asset, rate or variable.","Derivatives derive their value from something else."],
 ["Futures","Futures contracts create an obligation to transact at agreed terms on a future date or through settlement.","Futures are commonly used for hedging and speculation."],
@@ -486,11 +495,14 @@ lessons:[
 ],
 quiz:[
 ["A call option gives the buyer the right to?","Buy",["Buy","Sell","Borrow","Lend"]],
-["Theta is commonly associated with?","Time decay",["Time decay","Interest rate only","Volume","Revenue"]]
+["Theta is commonly associated with?","Time decay",["Time decay","Interest rate only","Volume","Revenue"]],
+["A put option gives the buyer the right to?","Sell",["Buy","Sell","Borrow","Lend"]],
+["Higher implied volatility generally causes option premiums to?","Increase",["Decrease","Increase","Disappear","Stay guaranteed"]]
 ]
 },
 {
 name:"Crypto",icon:"₿",level:"Intermediate",
+description:"Bitcoin, Ethereum and digital-asset markets.",
 lessons:[
 ["What is Bitcoin?","Bitcoin is a digital asset operating on a decentralised network using blockchain technology.","Bitcoin uses a distributed ledger."],
 ["Blockchain","A blockchain is a distributed ledger where transactions are recorded in linked blocks.","Blockchains allow participants to verify transaction history."],
@@ -505,11 +517,14 @@ lessons:[
 ],
 quiz:[
 ["What is Bitcoin's maximum protocol-defined supply?","21 million",["10 million","21 million","100 million","Unlimited"]],
-["Leverage generally does what to risk?","Magnifies it",["Removes it","Magnifies it","Guarantees profit","Eliminates volatility"]]
+["Leverage generally does what to risk?","Magnifies it",["Removes it","Magnifies it","Guarantees profit","Eliminates volatility"]],
+["Ethereum supports?","Smart contracts",["Only cash withdrawals","Smart contracts","Only gold trading","Only bonds"]],
+["Funding rates are commonly associated with?","Perpetual futures",["Savings accounts","Perpetual futures","Government bonds","Physical gold"]]
 ]
 },
 {
 name:"Macroeconomics",icon:"🌎",level:"Intermediate",
+description:"Inflation, GDP, central banks and economic cycles.",
 lessons:[
 ["What is Macroeconomics?","Macroeconomics studies the economy as a whole, including growth, inflation, unemployment and monetary policy.","Macro focuses on economy-wide variables."],
 ["GDP","Gross domestic product measures the value of final goods and services produced within an economy over a period.","GDP is a major measure of economic activity."],
@@ -524,277 +539,417 @@ lessons:[
 ],
 quiz:[
 ["GDP measures mainly?","Economic output",["Economic output","Only inflation","Only unemployment","Only interest rates"]],
-["Who conducts monetary policy in most countries?","Central bank",["Stock exchange","Central bank","Broker","Company board"]]
+["Who conducts monetary policy in most countries?","Central bank",["Stock exchange","Central bank","Broker","Company board"]],
+["Inflation generally means?","A sustained rise in general prices",["Falling prices only","A sustained rise in general prices","Higher stock prices only","Higher wages only"]],
+["Fiscal policy concerns?","Government spending and taxation",["Option Greeks","Government spending and taxation","Exchange rates only","Company dividends"]]
 ]
 }
 ];
-
-let currentCourse=0,currentLesson=0,quizIndex=0,quizScore=0,quizAnswered=false;
-
-function $(id){return document.getElementById(id)}
-
+/* =========================
+   STATE
+========================= */
+let currentCourse=0;
+let currentLesson=0;
+let quizIndex=0;
+let quizScore=0;
+let quizAnswered=false;
+/* =========================
+   HELPERS
+========================= */
+function getLessonProgress(index){
+const c=courses[index];
+return Math.min(
+Number(localStorage.getItem("course_"+index+"_lesson")||0),
+c.lessons.length
+);
+}
+function isCourseCompleted(index){
+return localStorage.getItem("course_"+index+"_completed")==="true";
+}
+function isQuizCompleted(index){
+return localStorage.getItem("quiz_"+index+"_completed")==="true";
+}
+function formatNumber(n){
+return Math.round(n).toLocaleString("en-IN");
+}
+/* =========================
+   NAVIGATION
+========================= */
 function showPage(id){
 document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-$(id).classList.add("active");
-
+document.getElementById(id).classList.add("active");
 document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
-if(id==="homePage")$("navHome").classList.add("active");
-if(id==="learnPage")$("navLearn").classList.add("active");
-if(id==="toolsPage")$("navTools").classList.add("active");
-if(id==="progressPage")$("navProgress").classList.add("active");
-
+if(id==="homePage")document.getElementById("navHome").classList.add("active");
+if(id==="learnPage")document.getElementById("navLearn").classList.add("active");
+if(id==="toolsPage")document.getElementById("navTools").classList.add("active");
+if(id==="progressPage")document.getElementById("navProgress").classList.add("active");
 updateProgress();
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo(0,0);
 }
-
+/* =========================
+   COURSE RENDERING
+========================= */
 function renderCourses(){
-let home="",learn="";
-courses.forEach((course,i)=>{
-home+=`
-<div class="card course" data-name="${course.name.toLowerCase()}" onclick="startCourse(${i})">
+const homeList=document.getElementById("courseList");
+const learnList=document.getElementById("learnList");
+homeList.innerHTML="";
+learnList.innerHTML="";
+courses.forEach((course,index)=>{
+const progress=getLessonProgress(index);
+const percent=Math.round((progress/course.lessons.length)*100);
+const done=isCourseCompleted(index);
+const home=document.createElement("div");
+home.className="card course";
+home.dataset.name=(course.name+" "+course.description).toLowerCase();
+home.onclick=()=>startCourse(index);
+home.innerHTML=`
+<div class="course-icon">${course.icon}</div>
+<div class="course-info">
+<h3>${course.name}</h3>
+<p>${course.description}</p>
+<div class="course-meta">
+${course.lessons.length} lessons · ${course.level}
+${done?' · ✓ Completed':''}
+</div>
+</div>
+<div class="arrow">›</div>
+`;
+homeList.appendChild(home);
+const learn=document.createElement("div");
+learn.className="card course";
+learn.onclick=()=>startCourse(index);
+learn.innerHTML=`
 <div class="course-icon">${course.icon}</div>
 <div class="course-info">
 <h3>${course.name}</h3>
 <p>${course.lessons.length} lessons · ${course.level}</p>
+<div class="course-meta">${percent}% completed</div>
 </div>
 <div class="arrow">›</div>
-</div>`;
-
-learn+=`
-<div class="card course" onclick="startCourse(${i})">
-<div class="course-icon">${course.icon}</div>
-<div class="course-info">
-<h3>${course.name}</h3>
-<p>${course.lessons.length} lessons · ${course.level}</p>
-</div>
-<div class="arrow">›</div>
-</div>`;
+`;
+learnList.appendChild(learn);
 });
-$("courseList").innerHTML=home;
-$("learnList").innerHTML=learn;
 }
-
+/* =========================
+   COURSE LOGIC
+========================= */
 function startCourse(index){
 currentCourse=index;
-currentLesson=Math.min(
-Number(localStorage.getItem("course_"+index+"_lesson")||0),
-courses[index].lessons.length-1
-);
+currentLesson=getLessonProgress(index);
+if(currentLesson>=courses[index].lessons.length){
+currentLesson=courses[index].lessons.length-1;
+}
 showPage("lessonPage");
 showLesson();
 }
-
 function resumeCourse(){
-let last=Number(localStorage.getItem("lastCourse")||0);
-if(last<0||last>=courses.length)last=0;
-startCourse(last);
+const saved=Number(localStorage.getItem("lastCourse")||0);
+startCourse(saved);
 }
-
 function showLesson(){
-const course=courses[currentCourse],lesson=course.lessons[currentLesson];
-$("lessonCourse").textContent=course.icon+" "+course.name;
-$("lessonLabel").textContent="Lesson "+(currentLesson+1)+" of "+course.lessons.length;
-$("lessonTitle").textContent=lesson[0];
-$("lessonText").textContent=lesson[1];
-$("lessonKey").textContent=lesson[2];
-
-const percent=Math.round((currentLesson/course.lessons.length)*100);
-$("lessonProgress").style.width=percent+"%";
-$("lessonPercent").textContent=percent+"%";
-$("nextButton").textContent=currentLesson===course.lessons.length-1?"Take Final Quiz":"Next Lesson";
-
+const course=courses[currentCourse];
+const lesson=course.lessons[currentLesson];
+document.getElementById("lessonCourse").textContent=
+course.icon+" "+course.name;
+document.getElementById("lessonLabel").textContent=
+"Lesson "+(currentLesson+1)+" of "+course.lessons.length;
+document.getElementById("lessonTitle").textContent=lesson[0];
+document.getElementById("lessonText").textContent=lesson[1];
+document.getElementById("lessonKey").textContent=lesson[2];
+const percent=Math.round(
+((currentLesson+1)/course.lessons.length)*100
+);
+document.getElementById("lessonProgress").style.width=percent+"%";
+document.getElementById("lessonPercent").textContent=percent+"%";
+document.getElementById("previousButton").classList.toggle(
+"disabled",currentLesson===0
+);
+document.getElementById("nextButton").textContent=
+currentLesson===course.lessons.length-1
+?"Take Final Quiz"
+:"Next Lesson";
 localStorage.setItem("lastCourse",currentCourse);
-localStorage.setItem("course_"+currentCourse+"_lesson",currentLesson);
+localStorage.setItem(
+"course_"+currentCourse+"_lesson",
+currentLesson+1
+);
 updateProgress();
 }
-
 function nextLesson(){
 const course=courses[currentCourse];
 if(currentLesson<course.lessons.length-1){
 currentLesson++;
 showLesson();
-}else startQuiz();
+}else{
+startQuiz();
 }
-
+}
 function previousLesson(){
 if(currentLesson>0){
 currentLesson--;
 showLesson();
 }
 }
-
+/* =========================
+   QUIZ
+========================= */
 function startQuiz(){
 const course=courses[currentCourse];
-quizIndex=0;quizScore=0;quizAnswered=false;
-$("quizTitle").textContent=course.name+" Quiz";
+quizIndex=0;
+quizScore=0;
+quizAnswered=false;
+document.getElementById("quizTitle").textContent=
+course.name+" Quiz";
 showPage("quizPage");
 showQuizQuestion();
 }
-
 function showQuizQuestion(){
-const course=courses[currentCourse],q=course.quiz[quizIndex];
+const course=courses[currentCourse];
+const q=course.quiz[quizIndex];
 quizAnswered=false;
-$("quizQuestion").textContent=q[0];
-$("quizResult").textContent="";
-$("quizNext").classList.add("hidden");
-$("quizOptions").innerHTML="";
-
+document.getElementById("quizQuestion").textContent=q[0];
+document.getElementById("quizResult").textContent="";
+document.getElementById("quizNext").classList.add("hidden");
+const options=document.getElementById("quizOptions");
+options.innerHTML="";
 q[2].forEach(option=>{
 const button=document.createElement("button");
 button.className="option";
 button.textContent=option;
-button.onclick=()=>answerQuiz(button,option===q[1]);
-$("quizOptions").appendChild(button);
+button.onclick=()=>{
+answerQuiz(button,option===q[1]);
+};
+options.appendChild(button);
 });
 }
-
 function answerQuiz(button,correct){
 if(quizAnswered)return;
 quizAnswered=true;
-document.querySelectorAll(".option").forEach(b=>b.disabled=true);
-
+document.querySelectorAll("#quizOptions .option").forEach(b=>{
+b.disabled=true;
+});
 if(correct){
 button.classList.add("correct");
 quizScore++;
-$("quizResult").textContent="Correct! 🎉";
+document.getElementById("quizResult").textContent="Correct! 🎉";
 }else{
 button.classList.add("wrong");
-$("quizResult").textContent="Not quite. Correct answer: "+courses[currentCourse].quiz[quizIndex][1];
+document.getElementById("quizResult").textContent=
+"Not quite. Correct answer: "+
+courses[currentCourse].quiz[quizIndex][1];
 }
-$("quizNext").classList.remove("hidden");
+document.getElementById("quizNext").classList.remove("hidden");
 }
-
 function nextQuizQuestion(){
 quizIndex++;
 if(quizIndex<courses[currentCourse].quiz.length){
 showQuizQuestion();
-}else completeCourse();
+}else{
+completeCourse();
 }
-
+}
 function completeCourse(){
-const i=currentCourse;
-localStorage.setItem("course_"+i+"_completed","true");
-localStorage.setItem("quiz_"+i+"_completed","true");
-localStorage.setItem("course_"+i+"_lesson",courses[i].lessons.length);
-
-showToast("Course completed! 🎉");
-setTimeout(()=>showPage("progressPage"),700);
-}
-
-function updateProgress(){
-let total=0,completed=0,coursesDone=0,quizzes=0;
-
-courses.forEach((course,i)=>{
-total+=course.lessons.length;
-let lesson=Number(localStorage.getItem("course_"+i+"_lesson")||0);
-completed+=Math.min(lesson,course.lessons.length);
-if(localStorage.getItem("course_"+i+"_completed")==="true")coursesDone++;
-if(localStorage.getItem("quiz_"+i+"_completed")==="true")quizzes++;
-});
-
-const percent=total?Math.round(completed/total*100):0;
-$("overallPercent").textContent=percent+"%";
-$("overallProgress").style.width=percent+"%";
-$("statLessons").textContent=completed;
-$("statCourses").textContent=coursesDone;
-$("statPercent").textContent=percent+"%";
-$("statQuizzes").textContent=quizzes;
-
-let last=Number(localStorage.getItem("lastCourse")||0);
-if(last<0||last>=courses.length)last=0;
-let lastLesson=Number(localStorage.getItem("course_"+last+"_lesson")||0);
-
-$("continueTitle").textContent=courses[last].icon+" "+courses[last].name;
-$("continueLesson").textContent=
-lastLesson>=courses[last].lessons.length
-?"Course completed ✓"
-:"Continue Lesson "+(lastLesson+1);
-
-let html="";
-courses.forEach((course,i)=>{
-let done=Number(localStorage.getItem("course_"+i+"_lesson")||0);
-let p=Math.round(Math.min(done,course.lessons.length)/course.lessons.length*100);
-let complete=localStorage.getItem("course_"+i+"_completed")==="true";
-
-html+=`
-<div style="margin:18px 0">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-<strong style="font-size:14px">${course.icon} ${course.name}</strong>
-<span class="badge">${complete?"Completed":p+"%"}</span>
+localStorage.setItem(
+"course_"+currentCourse+"_completed","true"
+);
+localStorage.setItem(
+"quiz_"+currentCourse+"_completed","true"
+);
+localStorage.setItem(
+"course_"+currentCourse+"_lesson",
+courses[currentCourse].lessons.length
+);
+const total=courses[currentCourse].quiz.length;
+const percent=Math.round((quizScore/total)*100);
+document.getElementById("quizBox").innerHTML=`
+<div class="quiz-score">
+<strong>${percent}%</strong>
+${quizScore} out of ${total} correct
 </div>
-<div class="progress"><div class="progress-fill" style="width:${p}%"></div></div>
-</div>`;
-});
-$("progressCourses").innerHTML=html;
+<div class="notice">
+🎉 Congratulations! You completed <strong>${courses[currentCourse].name}</strong>.
+</div>
+<button class="btn primary" onclick="showPage('progressPage')">
+View My Progress
+</button>
+<button class="btn secondary" style="margin-top:10px" onclick="startQuiz()">
+Retake Quiz
+</button>
+`;
+updateProgress();
 }
-
+/* =========================
+   PROGRESS
+========================= */
+function updateProgress(){
+let totalLessons=0;
+let completedLessons=0;
+let completedCourses=0;
+let completedQuizzes=0;
+courses.forEach((course,index)=>{
+totalLessons+=course.lessons.length;
+completedLessons+=getLessonProgress(index);
+if(isCourseCompleted(index))completedCourses++;
+if(isQuizCompleted(index))completedQuizzes++;
+});
+const percent=totalLessons?
+Math.round((completedLessons/totalLessons)*100):0;
+document.getElementById("overallPercent").textContent=percent+"%";
+document.getElementById("overallProgress").style.width=percent+"%";
+document.getElementById("statLessons").textContent=completedLessons;
+document.getElementById("statCourses").textContent=completedCourses;
+document.getElementById("statPercent").textContent=percent+"%";
+document.getElementById("statQuizzes").textContent=completedQuizzes;
+const last=Number(localStorage.getItem("lastCourse")||0);
+const lastCourse=courses[last];
+const lastLesson=getLessonProgress(last);
+document.getElementById("continueIcon").textContent=lastCourse.icon;
+document.getElementById("continueTitle").textContent=lastCourse.name;
+if(isCourseCompleted(last)){
+document.getElementById("continueLesson").textContent=
+"Course completed ✓";
+}else{
+document.getElementById("continueLesson").textContent=
+"Continue Lesson "+Math.min(lastLesson+1,lastCourse.lessons.length);
+}
+renderProgressCourses();
+renderCourses();
+}
+function renderProgressCourses(){
+const box=document.getElementById("progressCourses");
+box.innerHTML="";
+courses.forEach((course,index)=>{
+const completed=getLessonProgress(index);
+const percent=Math.round(
+(completed/course.lessons.length)*100
+);
+const card=document.createElement("div");
+card.className="card course-progress-card";
+card.innerHTML=`
+<div class="course-progress-top">
+<strong>${course.icon} ${course.name}</strong>
+<span>${percent}%</span>
+</div>
+<div class="progress">
+<div class="progress-fill" style="width:${percent}%"></div>
+</div>
+<p class="small">
+${isCourseCompleted(index)
+?"✓ Course completed"
+:completed===0
+?"Not started"
+:"Lesson "+completed+" of "+course.lessons.length}
+</p>
+`;
+box.appendChild(card);
+});
+}
+/* =========================
+   SEARCH
+========================= */
 function filterCourses(){
-const search=$("courseSearch").value.toLowerCase().trim();
+const search=
+document.getElementById("courseSearch").value.toLowerCase().trim();
 document.querySelectorAll("#courseList .course").forEach(card=>{
-card.style.display=card.dataset.name.includes(search)?"flex":"none";
+card.style.display=
+card.dataset.name.includes(search)?"flex":"none";
 });
 }
-
+/* =========================
+   CALCULATORS
+========================= */
 function compound(){
-const P=Number($("principal").value);
-const r=Number($("rate").value)/100;
-const n=Number($("years").value);
-if(P<=0||r<0||n<=0){alert("Please enter valid values.");return}
+const P=Number(document.getElementById("principal").value);
+const r=Number(document.getElementById("rate").value)/100;
+const n=Number(document.getElementById("years").value);
+if(P<=0||r<0||n<=0){
+alert("Please enter valid values.");
+return;
+}
 const result=P*Math.pow(1+r,n);
-$("futureValue").textContent="₹"+Math.round(result).toLocaleString("en-IN");
-$("compoundResult").classList.remove("hidden");
+document.getElementById("futureValue").textContent=
+"₹"+formatNumber(result);
+document.getElementById("compoundResult").classList.remove("hidden");
 }
-
 function cagr(){
-const start=Number($("cagrStart").value);
-const end=Number($("cagrEnd").value);
-const y=Number($("cagrYears").value);
-if(start<=0||end<=0||y<=0){alert("Please enter valid values.");return}
-const result=(Math.pow(end/start,1/y)-1)*100;
-$("cagrValue").textContent=result.toFixed(2)+"%";
-$("cagrResult").classList.remove("hidden");
+const start=Number(document.getElementById("cagrStart").value);
+const end=Number(document.getElementById("cagrEnd").value);
+const years=Number(document.getElementById("cagrYears").value);
+if(start<=0||end<=0||years<=0){
+alert("Please enter valid values.");
+return;
 }
-
+const result=(Math.pow(end/start,1/years)-1)*100;
+document.getElementById("cagrValue").textContent=
+result.toFixed(2)+"%";
+document.getElementById("cagrResult").classList.remove("hidden");
+}
 function sip(){
-const monthly=Number($("sipAmount").value);
-const annual=Number($("sipRate").value)/100;
-const y=Number($("sipYears").value);
-if(monthly<=0||annual<0||y<=0){alert("Please enter valid values.");return}
-
-const months=y*12;
+const monthly=Number(document.getElementById("sipAmount").value);
+const annual=Number(document.getElementById("sipRate").value)/100;
+const years=Number(document.getElementById("sipYears").value);
+if(monthly<=0||annual<0||years<=0){
+alert("Please enter valid values.");
+return;
+}
+const months=years*12;
+const monthlyRate=annual/12;
 let result;
-
-if(annual===0){
+if(monthlyRate===0){
 result=monthly*months;
 }else{
-const mr=annual/12;
-result=monthly*((Math.pow(1+mr,months)-1)/mr)*(1+mr);
+result=
+monthly*
+((Math.pow(1+monthlyRate,months)-1)/monthlyRate)*
+(1+monthlyRate);
 }
-
-$("sipValue").textContent="₹"+Math.round(result).toLocaleString("en-IN");
-$("sipResult").classList.remove("hidden");
+document.getElementById("sipValue").textContent=
+"₹"+formatNumber(result);
+document.getElementById("sipResult").classList.remove("hidden");
 }
-
+function simpleReturn(){
+const start=Number(document.getElementById("returnStart").value);
+const end=Number(document.getElementById("returnEnd").value);
+if(start<=0||end<0){
+alert("Please enter valid values.");
+return;
+}
+const result=((end-start)/start)*100;
+document.getElementById("returnValue").textContent=
+result.toFixed(2)+"%";
+document.getElementById("returnResult").classList.remove("hidden");
+}
+/* =========================
+   RESET
+========================= */
 function resetProgress(){
-if(confirm("Reset all Finance Academy progress on this device?")){
+const confirmed=confirm(
+"Reset all course progress and quiz results?"
+);
+if(!confirmed)return;
 Object.keys(localStorage).forEach(key=>{
-if(key.startsWith("course_")||key.startsWith("quiz_")||key==="lastCourse")
+if(
+key.startsWith("course_")||
+key.startsWith("quiz_")||
+key==="lastCourse"
+){
 localStorage.removeItem(key);
+}
 });
-updateProgress();
-showToast("Progress reset");
+currentCourse=0;
+currentLesson=0;
+alert("Progress has been reset.");
+location.reload();
 }
+/* =========================
+   HOME
+========================= */
+function goHome(){
+showPage("homePage");
 }
-
-function goHome(){showPage("homePage")}
-
-function showToast(message){
-const t=$("toast");
-t.textContent=message;
-t.classList.add("show");
-setTimeout(()=>t.classList.remove("show"),2200);
-}
-
+/* =========================
+   INITIALISE
+========================= */
 renderCourses();
 updateProgress();
 </script>
