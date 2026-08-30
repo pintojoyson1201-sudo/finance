@@ -21,24 +21,18 @@ body {
 .header {
   background: #0f172a;
   color: white;
-  padding: 32px 22px 28px;
+  padding: 28px 20px;
   border-radius: 0 0 28px 28px;
 }
 
-.header small {
-  opacity: .7;
-  font-size: 13px;
-}
-
 .header h1 {
-  margin: 8px 0;
-  font-size: 30px;
+  margin: 0 0 7px;
+  font-size: 29px;
 }
 
 .header p {
   margin: 0;
   color: #cbd5e1;
-  font-size: 15px;
 }
 
 .container {
@@ -47,68 +41,16 @@ body {
   padding: 20px;
 }
 
-.section-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 8px 0 14px;
-}
-
-.progress-card {
+.card {
   background: white;
   border-radius: 20px;
   padding: 20px;
-  margin-bottom: 26px;
+  margin-bottom: 16px;
   box-shadow: 0 5px 18px rgba(0,0,0,.06);
 }
 
-.progress-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.progress {
-  height: 9px;
-  background: #e5e7eb;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  width: 35%;
-  height: 100%;
-  background: #0f172a;
-}
-
-.continue {
-  margin-top: 16px;
-  background: #f1f5f9;
-  border-radius: 14px;
-  padding: 14px;
-}
-
-.continue strong {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.continue span {
-  font-size: 13px;
-  color: #64748b;
-}
-
-.courses {
-  display: grid;
-  gap: 14px;
-}
-
 .course {
-  background: white;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.05);
   cursor: pointer;
-  transition: transform .15s;
 }
 
 .course:active {
@@ -116,53 +58,107 @@ body {
 }
 
 .icon {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 10px;
 }
 
-.course h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
+h2 {
+  margin-top: 0;
 }
 
-.course p {
-  margin: 0;
+h3 {
+  margin-bottom: 7px;
+}
+
+p {
+  line-height: 1.55;
+  color: #475569;
+}
+
+.button {
+  width: 100%;
+  border: 0;
+  border-radius: 13px;
+  padding: 14px;
+  margin-top: 14px;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.progress {
+  height: 9px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #0f172a;
+  transition: width .3s;
+}
+
+.lesson-number {
   color: #64748b;
-  line-height: 1.45;
   font-size: 14px;
-}
-
-.tools {
-  margin-top: 28px;
-}
-
-.tool-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.tool {
-  background: white;
-  padding: 18px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,.05);
-}
-
-.tool div {
-  font-size: 25px;
-  margin-bottom: 8px;
-}
-
-.tool span {
-  font-size: 13px;
   font-weight: 600;
 }
 
-.bottom {
+.question {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.option {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  color: #0f172a;
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+}
+
+.option:active {
+  background: #e2e8f0;
+}
+
+.correct {
+  border-color: #16a34a;
+  background: #dcfce7;
+}
+
+.wrong {
+  border-color: #dc2626;
+  background: #fee2e2;
+}
+
+.hidden {
+  display: none;
+}
+
+.back {
+  margin-bottom: 15px;
+  color: #475569;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer {
   text-align: center;
-  padding: 35px 20px;
+  padding: 30px;
   color: #94a3b8;
   font-size: 12px;
 }
@@ -172,123 +168,357 @@ body {
 <body>
 
 <header class="header">
-  <small>WELCOME BACK</small>
   <h1>Finance Academy</h1>
   <p>Master money, markets & investing.</p>
 </header>
 
 <main class="container">
 
-  <div class="section-title">Your Learning</div>
+<!-- HOME -->
 
-  <section class="progress-card">
-    <div class="progress-row">
-      <strong>Overall Progress</strong>
-      <strong>35%</strong>
-    </div>
+<section id="home">
+
+  <div class="card">
+    <h2>Your Learning</h2>
+
+    <p>
+      Financial Markets
+    </p>
 
     <div class="progress">
-      <div class="progress-bar"></div>
+      <div id="homeProgress" class="progress-bar"></div>
     </div>
 
-    <div class="continue">
-      <strong>📈 Continue Learning</strong>
-      <span>Financial Markets · Lesson 4</span>
+    <p id="progressText">0% completed</p>
+  </div>
+
+  <h2>Courses</h2>
+
+  <div class="card course" onclick="openFinancialMarkets()">
+    <div class="icon">📊</div>
+    <h3>Financial Markets</h3>
+    <p>
+      Learn how stocks, bonds, currencies, commodities
+      and derivatives markets work.
+    </p>
+  </div>
+
+  <div class="card course">
+    <div class="icon">📈</div>
+    <h3>Stocks & Investing</h3>
+    <p>Coming next.</p>
+  </div>
+
+  <div class="card course">
+    <div class="icon">💰</div>
+    <h3>Bonds & Interest Rates</h3>
+    <p>Coming next.</p>
+  </div>
+
+  <div class="card course">
+    <div class="icon">⚡</div>
+    <h3>Derivatives & Options</h3>
+    <p>Coming next.</p>
+  </div>
+
+  <div class="card course">
+    <div class="icon">₿</div>
+    <h3>Crypto</h3>
+    <p>Coming next.</p>
+  </div>
+
+  <div class="card course">
+    <div class="icon">🌎</div>
+    <h3>Macroeconomics</h3>
+    <p>Coming next.</p>
+  </div>
+
+</section>
+
+
+<!-- COURSE -->
+
+<section id="course" class="hidden">
+
+  <div class="back" onclick="goHome()">← Back to Home</div>
+
+  <div class="card">
+
+    <div class="lesson-number" id="lessonNumber">
+      Lesson 1 of 10
     </div>
-  </section>
 
-  <div class="section-title">Courses</div>
+    <h2 id="lessonTitle"></h2>
 
-  <div class="courses">
+    <p id="lessonContent"></p>
 
-<div class="course" onclick="openCourse('Financial Markets')">
-  <div class="icon">📊</div>
-  <h3>Financial Markets</h3>
-  <p>Understand stocks, bonds, currencies, commodities and how markets work.</p>
-</div>    
-
-    <div class="course">
-      <div class="icon">📈</div>
-      <h3>Stocks & Investing</h3>
-      <p>Learn valuation, financial statements, investing and market psychology.</p>
+    <div class="progress">
+      <div id="courseProgress" class="progress-bar"></div>
     </div>
 
-    <div class="course">
-      <div class="icon">💰</div>
-      <h3>Bonds & Interest Rates</h3>
-      <p>Understand yields, bond prices, duration and the yield curve.</p>
-    </div>
-
-    <div class="course">
-      <div class="icon">🧮</div>
-      <h3>Valuation</h3>
-      <p>Learn DCF, multiples, intrinsic value and business valuation.</p>
-    </div>
-
-    <div class="course">
-      <div class="icon">⚡</div>
-      <h3>Derivatives & Options</h3>
-      <p>Understand futures, options, Greeks, strategies and risk management.</p>
-    </div>
-
-    <div class="course">
-      <div class="icon">₿</div>
-      <h3>Crypto</h3>
-      <p>Learn Bitcoin, Ethereum, derivatives, funding and crypto markets.</p>
-    </div>
-
-    <div class="course">
-      <div class="icon">🌎</div>
-      <h3>Macroeconomics</h3>
-      <p>Understand inflation, GDP, central banks, currencies and economic cycles.</p>
-    </div>
+    <button id="nextButton" class="button" onclick="nextLesson()">
+      Next Lesson
+    </button>
 
   </div>
 
-  <div class="tools">
+</section>
 
-    <div class="section-title">Finance Tools</div>
 
-    <div class="tool-grid">
+<!-- QUIZ -->
 
-      <div class="tool">
-        <div>📈</div>
-        <span>CAGR Calculator</span>
-      </div>
+<section id="quiz" class="hidden">
 
-      <div class="tool">
-        <div>💵</div>
-        <span>Compound Interest</span>
-      </div>
+  <div class="back" onclick="goHome()">← Back to Home</div>
 
-      <div class="tool">
-        <div>🪙</div>
-        <span>SIP Calculator</span>
-      </div>
+  <div class="card">
 
-      <div class="tool">
-        <div>⚡</div>
-        <span>Options Payoff</span>
-      </div>
-
+    <div class="lesson-number">
+      Final Quiz
     </div>
 
+    <h2>Financial Markets Quiz</h2>
+
+    <p class="question">
+      Which market allows companies to raise capital by issuing new shares to investors?
+    </p>
+
+    <button class="option" onclick="answer(this,false)">
+      Secondary market
+    </button>
+
+    <button class="option" onclick="answer(this,true)">
+      Primary market
+    </button>
+
+    <button class="option" onclick="answer(this,false)">
+      Money market
+    </button>
+
+    <p id="quizResult"></p>
+
+    <button id="finishButton"
+            class="button hidden"
+            onclick="finishCourse()">
+      Finish Course
+    </button>
+
   </div>
+
+</section>
 
 </main>
 
-<footer class="bottom">
-  Finance Academy · Your journey to financial mastery
+<footer class="footer">
+  Finance Academy
 </footer>
 
-</body>
-  <script>
 
-function openCourse(course) {
+<script>
 
-  alert(course + " course is coming next!");
+const lessons = [
+
+{
+title: "What is a Financial Market?",
+content:
+"A financial market is a system where buyers and sellers trade financial assets. These assets can include shares, bonds, currencies, commodities and derivatives. Financial markets help move money from people and institutions that have capital to those that need capital."
+},
+
+{
+title: "Why Do Financial Markets Exist?",
+content:
+"Financial markets perform several important functions. They help companies raise money, allow investors to invest their savings, provide liquidity, and help determine the prices of financial assets through supply and demand."
+},
+
+{
+title: "Equity Markets",
+content:
+"Equity markets are markets for ownership interests in companies. When you buy a share of a company, you become a shareholder. Stock exchanges provide organized venues where these shares can be bought and sold."
+},
+
+{
+title: "Bond Markets",
+content:
+"Bond markets deal with debt. Governments and companies can borrow money by issuing bonds. Investors receive interest according to the terms of the bond and generally receive the principal back at maturity."
+},
+
+{
+title: "Money Markets",
+content:
+"Money markets deal mainly with short-term borrowing and lending, usually involving instruments with maturities of one year or less. Banks, governments and large institutions use money markets to manage short-term liquidity."
+},
+
+{
+title: "Foreign Exchange Markets",
+content:
+"The foreign exchange market, commonly called forex, is where currencies are traded. Exchange rates determine how much of one currency is required to purchase another currency."
+},
+
+{
+title: "Commodity Markets",
+content:
+"Commodity markets allow participants to trade physical commodities or contracts linked to them. Examples include crude oil, natural gas, gold, silver and agricultural products."
+},
+
+{
+title: "Derivatives Markets",
+content:
+"Derivatives are financial contracts whose value is linked to another asset or variable. Futures and options are common derivatives. They can be used for hedging, speculation and risk management."
+},
+
+{
+title: "Risk and Return",
+content:
+"Investments generally involve a trade-off between risk and potential return. Higher expected returns often come with greater uncertainty. Understanding this relationship is essential for making investment decisions."
+},
+
+{
+title: "Putting It All Together",
+content:
+"Financial markets are interconnected. Interest rates can affect bonds, currencies and stocks. Economic growth can influence company profits and commodities. Understanding these relationships helps you understand why markets move."
+}
+
+];
+
+let currentLesson = 0;
+
+function openFinancialMarkets() {
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("course").classList.remove("hidden");
+
+  currentLesson = 0;
+
+  showLesson();
 
 }
 
+function showLesson() {
+
+  const lesson = lessons[currentLesson];
+
+  document.getElementById("lessonNumber").textContent =
+    "Lesson " + (currentLesson + 1) +
+    " of " + lessons.length;
+
+  document.getElementById("lessonTitle").textContent =
+    lesson.title;
+
+  document.getElementById("lessonContent").textContent =
+    lesson.content;
+
+  const progress =
+    ((currentLesson) / lessons.length) * 100;
+
+  document.getElementById("courseProgress").style.width =
+    progress + "%";
+
+  if (currentLesson === lessons.length - 1) {
+
+    document.getElementById("nextButton").textContent =
+      "Take Final Quiz";
+
+  } else {
+
+    document.getElementById("nextButton").textContent =
+      "Next Lesson";
+
+  }
+
+}
+
+function nextLesson() {
+
+  if (currentLesson < lessons.length - 1) {
+
+    currentLesson++;
+
+    showLesson();
+
+  } else {
+
+    document.getElementById("course").classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
+
+  }
+
+}
+
+function answer(button, correct) {
+
+  const options =
+    document.querySelectorAll(".option");
+
+  options.forEach(function(option) {
+    option.disabled = true;
+  });
+
+  if (correct) {
+
+    button.classList.add("correct");
+
+    document.getElementById("quizResult").textContent =
+      "Correct! 🎉 A primary market is where new securities are issued.";
+
+    document.getElementById("finishButton").classList.remove("hidden");
+
+  } else {
+
+    button.classList.add("wrong");
+
+    document.getElementById("quizResult").textContent =
+      "Not quite. Try again by refreshing the page.";
+
+  }
+
+}
+
+function finishCourse() {
+
+  localStorage.setItem(
+    "financialMarketsCompleted",
+    "true"
+  );
+
+  updateHomeProgress();
+
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
+
+  alert("Course completed! 🎉");
+
+}
+
+function updateHomeProgress() {
+
+  const completed =
+    localStorage.getItem("financialMarketsCompleted");
+
+  if (completed === "true") {
+
+    document.getElementById("homeProgress").style.width =
+      "100%";
+
+    document.getElementById("progressText").textContent =
+      "100% completed 🎉";
+
+  }
+
+}
+
+function goHome() {
+
+  document.getElementById("course").classList.add("hidden");
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
+
+  updateHomeProgress();
+
+}
+
+updateHomeProgress();
+
 </script>
 
+</body>
+</html>
