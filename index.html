@@ -2,316 +2,906 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0f172a">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#0b1220">
 <title>Finance Academy</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#101828;
+  --muted:#667085;
+  --border:#eaecf0;
+  --dark:#101828;
+  --soft:#f2f4f7;
+  --green:#12b76a;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f4f6f8;
-  color: #0f172a;
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  padding-bottom:90px;
 }
 
-.header {
-  background: #0f172a;
-  color: white;
-  padding: 28px 20px;
-  border-radius: 0 0 28px 28px;
+button{
+  font:inherit;
 }
 
-.header h1 {
-  margin: 0 0 7px;
-  font-size: 29px;
+.app{
+  max-width:760px;
+  margin:auto;
 }
 
-.header p {
-  margin: 0;
-  color: #cbd5e1;
+/* TOP */
+
+.top{
+  background:var(--dark);
+  color:white;
+  padding:30px 20px 26px;
+  border-radius:0 0 30px 30px;
 }
 
-.container {
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+.top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.card {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 5px 18px rgba(0,0,0,.06);
+.logo{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.5px;
+  opacity:.8;
 }
 
-.course {
-  cursor: pointer;
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#344054;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
 }
 
-.course:active {
-  transform: scale(.98);
+.top h1{
+  font-size:30px;
+  margin:20px 0 6px;
 }
 
-.icon {
-  font-size: 30px;
-  margin-bottom: 10px;
+.top p{
+  margin:0;
+  color:#98a2b3;
 }
 
-h2 {
-  margin-top: 0;
+/* CONTENT */
+
+.content{
+  padding:20px;
 }
 
-h3 {
-  margin-bottom: 7px;
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:24px 0 12px;
 }
 
-p {
-  line-height: 1.55;
-  color: #475569;
+.section-title h2{
+  font-size:20px;
+  margin:0;
 }
 
-.button {
-  width: 100%;
-  border: 0;
-  border-radius: 13px;
-  padding: 14px;
-  margin-top: 14px;
-  background: #0f172a;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
+.section-title span{
+  color:var(--muted);
+  font-size:13px;
 }
 
-.secondary {
-  background: #e2e8f0;
-  color: #0f172a;
+/* CARDS */
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:20px;
+  margin-bottom:14px;
+  box-shadow:0 5px 20px rgba(16,24,40,.05);
 }
 
-.progress {
-  height: 9px;
-  background: #e2e8f0;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 12px 0;
+.hero-card{
+  background:var(--dark);
+  color:white;
 }
 
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #0f172a;
-  transition: width .3s;
+.hero-card p{
+  color:#98a2b3;
 }
 
-.lesson-number {
-  color: #64748b;
-  font-size: 14px;
-  font-weight: 600;
+.hero-title{
+  font-size:23px;
+  font-weight:750;
+  margin-bottom:7px;
 }
 
-.question {
-  font-size: 18px;
-  font-weight: 700;
-  color: #0f172a;
+.small{
+  font-size:13px;
+  color:var(--muted);
 }
 
-.option {
-  background: #f8fafc;
-  border: 2px solid #e2e8f0;
-  color: #0f172a;
-  padding: 14px;
-  border-radius: 12px;
-  margin-top: 10px;
-  width: 100%;
-  text-align: left;
-  font-size: 15px;
+/* PROGRESS */
+
+.progress-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
 }
 
-.option:active {
-  background: #e2e8f0;
+.progress{
+  height:9px;
+  background:#eaecf0;
+  border-radius:20px;
+  overflow:hidden;
 }
 
-.correct {
-  border-color: #16a34a;
-  background: #dcfce7;
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:var(--green);
+  border-radius:20px;
+  transition:.3s;
 }
 
-.wrong {
-  border-color: #dc2626;
-  background: #fee2e2;
+/* COURSES */
+
+.course{
+  display:flex;
+  gap:15px;
+  align-items:center;
+  cursor:pointer;
 }
 
-.hidden {
-  display: none;
+.course:active{
+  transform:scale(.985);
 }
 
-.back {
-  margin-bottom: 15px;
-  color: #475569;
-  font-weight: 600;
-  cursor: pointer;
+.course-icon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  background:var(--soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  flex-shrink:0;
 }
 
-.footer {
-  text-align: center;
-  padding: 30px;
-  color: #94a3b8;
-  font-size: 12px;
+.course-info{
+  flex:1;
+}
+
+.course-info h3{
+  margin:0 0 5px;
+  font-size:17px;
+}
+
+.course-info p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.4;
+}
+
+.arrow{
+  color:#98a2b3;
+  font-size:22px;
+}
+
+/* TOOLS */
+
+.tool-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.tool{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px 12px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.tool:active{
+  transform:scale(.97);
+}
+
+.tool-icon{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.tool-title{
+  font-weight:650;
+  font-size:14px;
+}
+
+/* PAGES */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* LESSON */
+
+.back{
+  display:inline-block;
+  margin-bottom:16px;
+  color:var(--muted);
+  font-weight:650;
+  cursor:pointer;
+}
+
+.lesson-label{
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.lesson-title{
+  font-size:27px;
+  line-height:1.2;
+  margin:10px 0 15px;
+}
+
+.lesson-text{
+  font-size:16px;
+  line-height:1.7;
+  color:#475467;
+}
+
+.key-point{
+  background:var(--soft);
+  border-radius:16px;
+  padding:16px;
+  margin-top:20px;
+}
+
+.key-point strong{
+  display:block;
+  margin-bottom:6px;
+}
+
+.lesson-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.btn{
+  flex:1;
+  border:0;
+  border-radius:14px;
+  padding:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.primary{
+  background:var(--dark);
+  color:white;
+}
+
+.secondary{
+  background:var(--soft);
+  color:var(--text);
+}
+
+/* QUIZ */
+
+.question{
+  font-size:20px;
+  font-weight:700;
+  line-height:1.4;
+  margin:15px 0;
+}
+
+.option{
+  width:100%;
+  text-align:left;
+  padding:15px;
+  margin:7px 0;
+  border-radius:14px;
+  border:2px solid var(--border);
+  background:white;
+  cursor:pointer;
+}
+
+.option.correct{
+  border-color:var(--green);
+  background:#ecfdf3;
+}
+
+.option.wrong{
+  border-color:#f04438;
+  background:#fef3f2;
+}
+
+.result{
+  margin-top:15px;
+  font-weight:650;
+}
+
+/* CALCULATORS */
+
+.input{
+  width:100%;
+  padding:14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin:7px 0 15px;
+  font-size:16px;
+}
+
+.result-box{
+  background:var(--soft);
+  border-radius:16px;
+  padding:18px;
+  margin-top:16px;
+}
+
+.result-number{
+  font-size:27px;
+  font-weight:800;
+}
+
+/* BOTTOM NAV */
+
+.nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:72px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:center;
+  z-index:50;
+}
+
+.nav-inner{
+  width:100%;
+  max-width:760px;
+  display:flex;
+  justify-content:space-around;
+}
+
+.nav button{
+  border:0;
+  background:none;
+  color:#98a2b3;
+  font-size:11px;
+  font-weight:650;
+  width:25%;
+}
+
+.nav button.active{
+  color:var(--dark);
+}
+
+.nav-icon{
+  display:block;
+  font-size:22px;
+  margin-bottom:2px;
+}
+
+.empty{
+  text-align:center;
+  padding:30px 10px;
+  color:var(--muted);
+}
+
+.footer{
+  text-align:center;
+  padding:30px;
+  color:#98a2b3;
+  font-size:12px;
+}
+
+@media(min-width:600px){
+  .courses-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  .courses-grid .card{
+    margin-bottom:0;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <h1>Finance Academy</h1>
-  <p>Master money, markets & investing.</p>
-</header>
-
-<main class="container">
+<div class="app">
 
 <!-- HOME -->
 
-<section id="home">
+<section id="homePage" class="page active">
 
-  <div class="card">
-    <h2>Your Learning</h2>
+<header class="top">
+  <div class="top-row">
+    <div class="logo">FINANCE ACADEMY</div>
+    <div class="avatar">J</div>
+  </div>
 
-    <p>
-      Financial Markets
-    </p>
+  <h1>Good evening 👋</h1>
+  <p>Keep building your financial knowledge.</p>
+</header>
 
-    <div class="progress">
-      <div id="homeProgress" class="progress-bar"></div>
+<main class="content">
+
+  <div class="card hero-card">
+
+    <div class="hero-title">Your Learning Journey</div>
+
+    <p>Complete courses and build a strong understanding of finance.</p>
+
+    <div class="progress-row">
+      <span>Overall progress</span>
+      <strong id="overallPercent">0%</strong>
     </div>
 
-    <p id="progressText">0% completed</p>
+    <div class="progress">
+      <div id="overallProgress" class="progress-fill"></div>
+    </div>
+
   </div>
 
-  <h2>Courses</h2>
-
-  <div class="card course" onclick="openFinancialMarkets()">
-    <div class="icon">📊</div>
-    <h3>Financial Markets</h3>
-    <p>
-      Learn how stocks, bonds, currencies, commodities
-      and derivatives markets work.
-    </p>
+  <div class="section-title">
+    <h2>Continue Learning</h2>
   </div>
 
-  <div class="card course">
-    <div class="icon">📈</div>
-    <h3>Stocks & Investing</h3>
-    <p>Coming next.</p>
+  <div class="card course" onclick="startCourse(0)">
+
+    <div class="course-icon">📊</div>
+
+    <div class="course-info">
+      <h3>Financial Markets</h3>
+      <p>Start with the foundations of how financial markets work.</p>
+    </div>
+
+    <div class="arrow">›</div>
+
   </div>
 
-  <div class="card course">
-    <div class="icon">💰</div>
-    <h3>Bonds & Interest Rates</h3>
-    <p>Coming next.</p>
+  <div class="section-title">
+    <h2>Explore Courses</h2>
+    <span>7 courses</span>
   </div>
 
-  <div class="card course">
-    <div class="icon">⚡</div>
-    <h3>Derivatives & Options</h3>
-    <p>Coming next.</p>
+  <div class="courses-grid">
+
+    <div class="card course" onclick="startCourse(0)">
+      <div class="course-icon">📊</div>
+      <div class="course-info">
+        <h3>Financial Markets</h3>
+        <p>Markets, exchanges, liquidity and price discovery.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="card course" onclick="comingSoon('Stocks & Investing')">
+      <div class="course-icon">📈</div>
+      <div class="course-info">
+        <h3>Stocks & Investing</h3>
+        <p>Equity, valuation and investment principles.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="card course" onclick="comingSoon('Bonds & Interest Rates')">
+      <div class="course-icon">💰</div>
+      <div class="course-info">
+        <h3>Bonds & Rates</h3>
+        <p>Yields, duration and interest-rate markets.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="card course" onclick="comingSoon('Valuation')">
+      <div class="course-icon">🧮</div>
+      <div class="course-info">
+        <h3>Valuation</h3>
+        <p>DCF, multiples and intrinsic value.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="card course" onclick="comingSoon('Derivatives & Options')">
+      <div class="course-icon">⚡</div>
+      <div class="course-info">
+        <h3>Derivatives</h3>
+        <p>Futures, options, Greeks and strategies.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="card course" onclick="comingSoon('Crypto')">
+      <div class="course-icon">₿</div>
+      <div class="course-info">
+        <h3>Crypto</h3>
+        <p>Bitcoin, Ethereum and crypto markets.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="card course" onclick="comingSoon('Macroeconomics')">
+      <div class="course-icon">🌎</div>
+      <div class="course-info">
+        <h3>Macroeconomics</h3>
+        <p>Inflation, GDP, central banks and cycles.</p>
+      </div>
+      <div class="arrow">›</div>
+    </div>
+
   </div>
 
-  <div class="card course">
-    <div class="icon">₿</div>
-    <h3>Crypto</h3>
-    <p>Coming next.</p>
+  <div class="section-title">
+    <h2>Finance Tools</h2>
   </div>
 
-  <div class="card course">
-    <div class="icon">🌎</div>
-    <h3>Macroeconomics</h3>
-    <p>Coming next.</p>
+  <div class="tool-grid">
+
+    <div class="tool" onclick="showPage('toolsPage')">
+      <div class="tool-icon">🧮</div>
+      <div class="tool-title">Calculators</div>
+    </div>
+
+    <div class="tool" onclick="showPage('progressPage')">
+      <div class="tool-icon">🏆</div>
+      <div class="tool-title">My Progress</div>
+    </div>
+
   </div>
+
+</main>
 
 </section>
 
 
-<!-- COURSE -->
+<!-- LEARN -->
 
-<section id="course" class="hidden">
+<section id="learnPage" class="page">
 
-  <div class="back" onclick="goHome()">← Back to Home</div>
+<header class="top">
+  <div class="logo">LEARN</div>
+  <h1>Courses</h1>
+  <p>Build your finance knowledge step by step.</p>
+</header>
+
+<main class="content">
+
+  <div class="card course" onclick="startCourse(0)">
+    <div class="course-icon">📊</div>
+    <div class="course-info">
+      <h3>Financial Markets</h3>
+      <p>10 lessons · Beginner</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="card course" onclick="comingSoon('Stocks & Investing')">
+    <div class="course-icon">📈</div>
+    <div class="course-info">
+      <h3>Stocks & Investing</h3>
+      <p>Coming next</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="card course" onclick="comingSoon('Bonds & Interest Rates')">
+    <div class="course-icon">💰</div>
+    <div class="course-info">
+      <h3>Bonds & Interest Rates</h3>
+      <p>Coming next</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="card course" onclick="comingSoon('Valuation')">
+    <div class="course-icon">🧮</div>
+    <div class="course-info">
+      <h3>Valuation</h3>
+      <p>Coming next</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="card course" onclick="comingSoon('Derivatives & Options')">
+    <div class="course-icon">⚡</div>
+    <div class="course-info">
+      <h3>Derivatives & Options</h3>
+      <p>Coming next</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="card course" onclick="comingSoon('Crypto')">
+    <div class="course-icon">₿</div>
+    <div class="course-info">
+      <h3>Crypto</h3>
+      <p>Coming next</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="card course" onclick="comingSoon('Macroeconomics')">
+    <div class="course-icon">🌎</div>
+    <div class="course-info">
+      <h3>Macroeconomics</h3>
+      <p>Coming next</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+</main>
+
+</section>
+
+
+<!-- TOOLS -->
+
+<section id="toolsPage" class="page">
+
+<header class="top">
+  <div class="logo">FINANCE TOOLS</div>
+  <h1>Calculators</h1>
+  <p>Useful tools for investors and traders.</p>
+</header>
+
+<main class="content">
 
   <div class="card">
 
-    <div class="lesson-number" id="lessonNumber">
+    <h2>Compound Interest</h2>
+
+    <label>Initial Investment</label>
+    <input id="principal" class="input" type="number" placeholder="₹ 100000">
+
+    <label>Annual Return (%)</label>
+    <input id="rate" class="input" type="number" placeholder="12">
+
+    <label>Years</label>
+    <input id="years" class="input" type="number" placeholder="10">
+
+    <button class="btn primary" onclick="calculateCompound()">
+      Calculate
+    </button>
+
+    <div id="compoundResult" class="result-box hidden">
+      <div class="small">Future Value</div>
+      <div id="futureValue" class="result-number">₹0</div>
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <h2>CAGR</h2>
+
+    <label>Starting Value</label>
+    <input id="cagrStart" class="input" type="number" placeholder="₹ 100000">
+
+    <label>Ending Value</label>
+    <input id="cagrEnd" class="input" type="number" placeholder="₹ 200000">
+
+    <label>Years</label>
+    <input id="cagrYears" class="input" type="number" placeholder="5">
+
+    <button class="btn primary" onclick="calculateCAGR()">
+      Calculate CAGR
+    </button>
+
+    <div id="cagrResult" class="result-box hidden">
+      <div class="small">CAGR</div>
+      <div id="cagrValue" class="result-number">0%</div>
+    </div>
+
+  </div>
+
+</main>
+
+</section>
+
+
+<!-- PROGRESS -->
+
+<section id="progressPage" class="page">
+
+<header class="top">
+  <div class="logo">MY PROGRESS</div>
+  <h1>Your Progress</h1>
+  <p>Track your journey through Finance Academy.</p>
+</header>
+
+<main class="content">
+
+  <div class="card">
+
+    <h2>Financial Markets</h2>
+
+    <div class="progress-row">
+      <span>Course progress</span>
+      <strong id="courseProgressText">0%</strong>
+    </div>
+
+    <div class="progress">
+      <div id="courseProgressBar" class="progress-fill"></div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>Lessons completed</h3>
+    <div id="lessonsCompleted" class="result-number">0 / 10</div>
+  </div>
+
+  <div class="card">
+    <h3>Courses completed</h3>
+    <div id="coursesCompleted" class="result-number">0</div>
+  </div>
+
+</main>
+
+</section>
+
+
+<!-- LESSON PAGE -->
+
+<section id="lessonPage" class="page">
+
+<main class="content">
+
+  <div class="back" onclick="goHome()">← Back</div>
+
+  <div class="card">
+
+    <div id="lessonLabel" class="lesson-label">
       Lesson 1 of 10
     </div>
 
-    <h2 id="lessonTitle"></h2>
+    <h1 id="lessonTitle" class="lesson-title"></h1>
 
-    <p id="lessonContent"></p>
+    <p id="lessonText" class="lesson-text"></p>
 
-    <div class="progress">
-      <div id="courseProgress" class="progress-bar"></div>
+    <div class="key-point">
+      <strong>💡 Key Point</strong>
+      <span id="keyPoint"></span>
     </div>
 
-    <button id="nextButton" class="button" onclick="nextLesson()">
-      Next Lesson
-    </button>
+    <div class="progress">
+      <div id="lessonProgress" class="progress-fill"></div>
+    </div>
+
+    <div class="lesson-buttons">
+
+      <button class="btn secondary" onclick="previousLesson()">
+        Previous
+      </button>
+
+      <button id="nextLessonButton" class="btn primary" onclick="nextLesson()">
+        Next
+      </button>
+
+    </div>
 
   </div>
+
+</main>
 
 </section>
 
 
 <!-- QUIZ -->
 
-<section id="quiz" class="hidden">
+<section id="quizPage" class="page">
 
-  <div class="back" onclick="goHome()">← Back to Home</div>
+<main class="content">
+
+  <div class="back" onclick="goHome()">← Back</div>
 
   <div class="card">
 
-    <div class="lesson-number">
-      Final Quiz
+    <div class="lesson-label">Final Quiz</div>
+
+    <h1>Financial Markets Quiz</h1>
+
+    <div id="questionArea">
+
+      <div class="question">
+        Which market is where newly issued securities are sold to investors?
+      </div>
+
+      <button class="option" onclick="quizAnswer(this,false)">
+        Secondary market
+      </button>
+
+      <button class="option" onclick="quizAnswer(this,true)">
+        Primary market
+      </button>
+
+      <button class="option" onclick="quizAnswer(this,false)">
+        Foreign exchange market
+      </button>
+
+      <button class="option" onclick="quizAnswer(this,false)">
+        Commodity market
+      </button>
+
+      <div id="quizResult" class="result"></div>
+
     </div>
 
-    <h2>Financial Markets Quiz</h2>
-
-    <p class="question">
-      Which market allows companies to raise capital by issuing new shares to investors?
-    </p>
-
-    <button class="option" onclick="answer(this,false)">
-      Secondary market
-    </button>
-
-    <button class="option" onclick="answer(this,true)">
-      Primary market
-    </button>
-
-    <button class="option" onclick="answer(this,false)">
-      Money market
-    </button>
-
-    <p id="quizResult"></p>
-
-    <button id="finishButton"
-            class="button hidden"
-            onclick="finishCourse()">
-      Finish Course
+    <button id="finishQuiz" class="btn primary hidden" onclick="finishCourse()">
+      Complete Course
     </button>
 
   </div>
 
-</section>
-
 </main>
 
-<footer class="footer">
-  Finance Academy
-</footer>
+</section>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="nav">
+
+  <div class="nav-inner">
+
+    <button id="navHome" class="active" onclick="showPage('homePage')">
+      <span class="nav-icon">⌂</span>
+      Home
+    </button>
+
+    <button id="navLearn" onclick="showPage('learnPage')">
+      <span class="nav-icon">📚</span>
+      Learn
+    </button>
+
+    <button id="navTools" onclick="showPage('toolsPage')">
+      <span class="nav-icon">🧮</span>
+      Tools
+    </button>
+
+    <button id="navProgress" onclick="showPage('progressPage')">
+      <span class="nav-icon">🏆</span>
+      Progress
+    </button>
+
+  </div>
+
+</nav>
+
+</div>
 
 
 <script>
@@ -319,204 +909,304 @@ p {
 const lessons = [
 
 {
-title: "What is a Financial Market?",
-content:
-"A financial market is a system where buyers and sellers trade financial assets. These assets can include shares, bonds, currencies, commodities and derivatives. Financial markets help move money from people and institutions that have capital to those that need capital."
+title:"What is a Financial Market?",
+text:"A financial market is a system where buyers and sellers trade financial assets. These assets include shares, bonds, currencies, commodities and derivatives. Financial markets connect people and institutions that have capital with those that need capital.",
+key:"Financial markets help transfer capital and provide a place where financial assets can be bought and sold."
 },
 
 {
-title: "Why Do Financial Markets Exist?",
-content:
-"Financial markets perform several important functions. They help companies raise money, allow investors to invest their savings, provide liquidity, and help determine the prices of financial assets through supply and demand."
+title:"Why Do Financial Markets Exist?",
+text:"Financial markets perform several important functions. They help businesses raise capital, allow investors to invest savings, provide liquidity and help establish prices through supply and demand.",
+key:"Markets make it easier to move capital, manage risk and discover prices."
 },
 
 {
-title: "Equity Markets",
-content:
-"Equity markets are markets for ownership interests in companies. When you buy a share of a company, you become a shareholder. Stock exchanges provide organized venues where these shares can be bought and sold."
+title:"Equity Markets",
+text:"Equity markets are markets for ownership in companies. When an investor purchases a share, the investor obtains an ownership interest in that company.",
+key:"A share represents a claim on a portion of a company's ownership."
 },
 
 {
-title: "Bond Markets",
-content:
-"Bond markets deal with debt. Governments and companies can borrow money by issuing bonds. Investors receive interest according to the terms of the bond and generally receive the principal back at maturity."
+title:"Bond Markets",
+text:"Bond markets involve debt securities. Governments and companies can borrow money by issuing bonds. Investors generally receive interest and repayment of principal according to the bond's terms.",
+key:"Bonds represent lending rather than ownership."
 },
 
 {
-title: "Money Markets",
-content:
-"Money markets deal mainly with short-term borrowing and lending, usually involving instruments with maturities of one year or less. Banks, governments and large institutions use money markets to manage short-term liquidity."
+title:"Money Markets",
+text:"Money markets deal primarily with short-term borrowing and lending. Instruments typically have maturities of one year or less and are used extensively for liquidity management.",
+key:"Money markets focus on short-term funding and liquidity."
 },
 
 {
-title: "Foreign Exchange Markets",
-content:
-"The foreign exchange market, commonly called forex, is where currencies are traded. Exchange rates determine how much of one currency is required to purchase another currency."
+title:"Foreign Exchange Markets",
+text:"The foreign exchange market is where currencies are traded. Exchange rates tell us how much of one currency is required to buy another currency.",
+key:"FX markets are essential for international trade, investment and currency risk management."
 },
 
 {
-title: "Commodity Markets",
-content:
-"Commodity markets allow participants to trade physical commodities or contracts linked to them. Examples include crude oil, natural gas, gold, silver and agricultural products."
+title:"Commodity Markets",
+text:"Commodity markets allow participants to trade commodities such as crude oil, natural gas, gold, silver and agricultural products, either physically or through financial contracts.",
+key:"Commodities can be traded directly or through derivatives."
 },
 
 {
-title: "Derivatives Markets",
-content:
-"Derivatives are financial contracts whose value is linked to another asset or variable. Futures and options are common derivatives. They can be used for hedging, speculation and risk management."
+title:"Derivatives Markets",
+text:"Derivatives are contracts whose value is linked to an underlying asset or variable. Futures and options are common examples. They can be used for hedging, speculation and risk management.",
+key:"A derivative gets its value from something else."
 },
 
 {
-title: "Risk and Return",
-content:
-"Investments generally involve a trade-off between risk and potential return. Higher expected returns often come with greater uncertainty. Understanding this relationship is essential for making investment decisions."
+title:"Risk and Return",
+text:"Investing involves uncertainty. Different investments have different levels of risk and potential return. Understanding risk, diversification and time horizon is essential for sound investment decisions.",
+key:"Higher potential return generally comes with greater uncertainty."
 },
 
 {
-title: "Putting It All Together",
-content:
-"Financial markets are interconnected. Interest rates can affect bonds, currencies and stocks. Economic growth can influence company profits and commodities. Understanding these relationships helps you understand why markets move."
+title:"Putting It All Together",
+text:"Financial markets are interconnected. Interest rates can influence bonds, stocks, currencies and economic activity. Economic growth can affect company profits and commodities. Understanding these relationships helps investors interpret market movements.",
+key:"Markets should not be studied in isolation because economic and financial variables interact."
 }
 
 ];
 
 let currentLesson = 0;
 
-function openFinancialMarkets() {
+function showPage(pageId){
 
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("course").classList.remove("hidden");
+  document.querySelectorAll(".page").forEach(function(page){
+    page.classList.remove("active");
+  });
 
-  currentLesson = 0;
+  document.getElementById(pageId).classList.add("active");
+
+  document.querySelectorAll(".nav button").forEach(function(btn){
+    btn.classList.remove("active");
+  });
+
+  if(pageId==="homePage") navHome.classList.add("active");
+  if(pageId==="learnPage") navLearn.classList.add("active");
+  if(pageId==="toolsPage") navTools.classList.add("active");
+  if(pageId==="progressPage") navProgress.classList.add("active");
+
+  updateProgress();
+
+  window.scrollTo(0,0);
+}
+
+function goHome(){
+  showPage("homePage");
+}
+
+function startCourse(index){
+
+  if(index!==0){
+    comingSoon("This course");
+    return;
+  }
+
+  currentLesson = Number(localStorage.getItem("currentLesson") || 0);
 
   showLesson();
 
+  showPage("lessonPage");
 }
 
-function showLesson() {
+function showLesson(){
 
   const lesson = lessons[currentLesson];
 
-  document.getElementById("lessonNumber").textContent =
-    "Lesson " + (currentLesson + 1) +
-    " of " + lessons.length;
+  lessonLabel.textContent =
+    "Lesson " + (currentLesson+1) + " of " + lessons.length;
 
-  document.getElementById("lessonTitle").textContent =
-    lesson.title;
+  lessonTitle.textContent = lesson.title;
 
-  document.getElementById("lessonContent").textContent =
-    lesson.content;
+  lessonText.textContent = lesson.text;
+
+  keyPoint.textContent = lesson.key;
 
   const progress =
-    ((currentLesson) / lessons.length) * 100;
+    (currentLesson / lessons.length) * 100;
 
-  document.getElementById("courseProgress").style.width =
-    progress + "%";
+  lessonProgress.style.width = progress + "%";
 
-  if (currentLesson === lessons.length - 1) {
-
-    document.getElementById("nextButton").textContent =
-      "Take Final Quiz";
-
-  } else {
-
-    document.getElementById("nextButton").textContent =
-      "Next Lesson";
-
+  if(currentLesson === lessons.length-1){
+    nextLessonButton.textContent = "Take Final Quiz";
+  }else{
+    nextLessonButton.textContent = "Next Lesson";
   }
 
+  localStorage.setItem("currentLesson",currentLesson);
 }
 
-function nextLesson() {
+function nextLesson(){
 
-  if (currentLesson < lessons.length - 1) {
+  if(currentLesson < lessons.length-1){
 
     currentLesson++;
 
+    localStorage.setItem("currentLesson",currentLesson);
+
     showLesson();
 
-  } else {
+  }else{
 
-    document.getElementById("course").classList.add("hidden");
-    document.getElementById("quiz").classList.remove("hidden");
+    showPage("quizPage");
 
   }
 
 }
 
-function answer(button, correct) {
+function previousLesson(){
+
+  if(currentLesson>0){
+
+    currentLesson--;
+
+    localStorage.setItem("currentLesson",currentLesson);
+
+    showLesson();
+
+  }
+
+}
+
+function quizAnswer(button,correct){
 
   const options =
     document.querySelectorAll(".option");
 
-  options.forEach(function(option) {
-    option.disabled = true;
+  options.forEach(function(option){
+    option.disabled=true;
   });
 
-  if (correct) {
+  if(correct){
 
     button.classList.add("correct");
 
-    document.getElementById("quizResult").textContent =
-      "Correct! 🎉 A primary market is where new securities are issued.";
+    quizResult.textContent =
+      "Correct! 🎉 The primary market is where new securities are issued.";
 
-    document.getElementById("finishButton").classList.remove("hidden");
+    finishQuiz.classList.remove("hidden");
 
-  } else {
+  }else{
 
     button.classList.add("wrong");
 
-    document.getElementById("quizResult").textContent =
-      "Not quite. Try again by refreshing the page.";
+    quizResult.textContent =
+      "Not quite. The correct answer is the Primary Market.";
+
+    finishQuiz.classList.remove("hidden");
 
   }
 
 }
 
-function finishCourse() {
+function finishCourse(){
 
-  localStorage.setItem(
-    "financialMarketsCompleted",
-    "true"
-  );
+  localStorage.setItem("financialMarketsCompleted","true");
 
-  updateHomeProgress();
+  localStorage.setItem("currentLesson","10");
 
-  document.getElementById("quiz").classList.add("hidden");
-  document.getElementById("home").classList.remove("hidden");
+  updateProgress();
 
-  alert("Course completed! 🎉");
+  alert("Financial Markets completed! 🎉");
+
+  showPage("progressPage");
 
 }
 
-function updateHomeProgress() {
+function calculateCompound(){
+
+  const P =
+    Number(document.getElementById("principal").value);
+
+  const r =
+    Number(document.getElementById("rate").value)/100;
+
+  const n =
+    Number(document.getElementById("years").value);
+
+  if(!P || !r || !n){
+    alert("Please enter all values.");
+    return;
+  }
+
+  const future =
+    P * Math.pow(1+r,n);
+
+  document.getElementById("futureValue").textContent =
+    "₹" + Math.round(future).toLocaleString("en-IN");
+
+  document.getElementById("compoundResult")
+    .classList.remove("hidden");
+
+}
+
+function calculateCAGR(){
+
+  const start =
+    Number(document.getElementById("cagrStart").value);
+
+  const end =
+    Number(document.getElementById("cagrEnd").value);
+
+  const years =
+    Number(document.getElementById("cagrYears").value);
+
+  if(!start || !end || !years){
+    alert("Please enter all values.");
+    return;
+  }
+
+  const cagr =
+    (Math.pow(end/start,1/years)-1)*100;
+
+  document.getElementById("cagrValue").textContent =
+    cagr.toFixed(2) + "%";
+
+  document.getElementById("cagrResult")
+    .classList.remove("hidden");
+
+}
+
+function updateProgress(){
 
   const completed =
-    localStorage.getItem("financialMarketsCompleted");
+    localStorage.getItem("financialMarketsCompleted")==="true";
 
-  if (completed === "true") {
+  const lesson =
+    Number(localStorage.getItem("currentLesson") || 0);
 
-    document.getElementById("homeProgress").style.width =
-      "100%";
+  let percent = 0;
 
-    document.getElementById("progressText").textContent =
-      "100% completed 🎉";
-
+  if(completed){
+    percent=100;
+  }else{
+    percent=Math.round((lesson/lessons.length)*100);
   }
 
+  overallPercent.textContent=percent+"%";
+  overallProgress.style.width=percent+"%";
+
+  courseProgressText.textContent=percent+"%";
+  courseProgressBar.style.width=percent+"%";
+
+  lessonsCompleted.textContent =
+    Math.min(lesson,10) + " / 10";
+
+  coursesCompleted.textContent =
+    completed ? "1" : "0";
+
 }
 
-function goHome() {
+function comingSoon(name){
 
-  document.getElementById("course").classList.add("hidden");
-  document.getElementById("quiz").classList.add("hidden");
-  document.getElementById("home").classList.remove("hidden");
-
-  updateHomeProgress();
+  alert(name + " is coming next. 🚀");
 
 }
 
-updateHomeProgress();
+updateProgress();
 
 </script>
 
