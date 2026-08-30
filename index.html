@@ -1,1 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<title>Finance Academy</title>
 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6f8;
+  color: #0f172a;
+}
+
+.header {
+  background: #0f172a;
+  color: white;
+  padding: 32px 22px 28px;
+  border-radius: 0 0 28px 28px;
+}
+
+.header small {
+  opacity: .7;
+  font-size: 13px;
+}
+
+.header h1 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+.header p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0 14px;
+}
+
+.progress-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 26px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.06);
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.progress {
+  height: 9px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 35%;
+  height: 100%;
+  background: #0f172a;
+}
+
+.continue {
+  margin-top: 16px;
+  background: #f1f5f9;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.continue strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.continue span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.courses {
+  display: grid;
+  gap: 14px;
+}
+
+.course {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.05);
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+.course:active {
+  transform: scale(.98);
+}
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.course h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.course p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.tools {
+  margin-top: 28px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tool {
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+
+.tool div {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.tool span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bottom {
+  text-align: center;
+  padding: 35px 20px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <small>WELCOME BACK</small>
+  <h1>Finance Academy</h1>
+  <p>Master money, markets & investing.</p>
+</header>
+
+<main class="container">
+
+  <div class="section-title">Your Learning</div>
+
+  <section class="progress-card">
+    <div class="progress-row">
+      <strong>Overall Progress</strong>
+      <strong>35%</strong>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+
+    <div class="continue">
+      <strong>📈 Continue Learning</strong>
+      <span>Financial Markets · Lesson 4</span>
+    </div>
+  </section>
+
+  <div class="section-title">Courses</div>
+
+  <div class="courses">
+
+    <div class="course">
+      <div class="icon">📊</div>
+      <h3>Financial Markets</h3>
+      <p>Understand stocks, bonds, currencies, commodities and how markets work.</p>
+    </div>
+
+    <div class="course">
+      <div class="icon">📈</div>
+      <h3>Stocks & Investing</h3>
+      <p>Learn valuation, financial statements, investing and market psychology.</p>
+    </div>
+
+    <div class="course">
+      <div class="icon">💰</div>
+      <h3>Bonds & Interest Rates</h3>
+      <p>Understand yields, bond prices, duration and the yield curve.</p>
+    </div>
+
+    <div class="course">
+      <div class="icon">🧮</div>
+      <h3>Valuation</h3>
+      <p>Learn DCF, multiples, intrinsic value and business valuation.</p>
+    </div>
+
+    <div class="course">
+      <div class="icon">⚡</div>
+      <h3>Derivatives & Options</h3>
+      <p>Understand futures, options, Greeks, strategies and risk management.</p>
+    </div>
+
+    <div class="course">
+      <div class="icon">₿</div>
+      <h3>Crypto</h3>
+      <p>Learn Bitcoin, Ethereum, derivatives, funding and crypto markets.</p>
+    </div>
+
+    <div class="course">
+      <div class="icon">🌎</div>
+      <h3>Macroeconomics</h3>
+      <p>Understand inflation, GDP, central banks, currencies and economic cycles.</p>
+    </div>
+
+  </div>
+
+  <div class="tools">
+
+    <div class="section-title">Finance Tools</div>
+
+    <div class="tool-grid">
+
+      <div class="tool">
+        <div>📈</div>
+        <span>CAGR Calculator</span>
+      </div>
+
+      <div class="tool">
+        <div>💵</div>
+        <span>Compound Interest</span>
+      </div>
+
+      <div class="tool">
+        <div>🪙</div>
+        <span>SIP Calculator</span>
+      </div>
+
+      <div class="tool">
+        <div>⚡</div>
+        <span>Options Payoff</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="bottom">
+  Finance Academy · Your journey to financial mastery
+</footer>
+
+</body>
+</html>
